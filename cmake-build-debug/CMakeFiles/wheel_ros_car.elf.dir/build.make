@@ -603,9 +603,22 @@ CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/event_groups.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/event_groups.c.s"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/event_groups.c -o CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/event_groups.c.s
 
+CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
+CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.obj: ../FreeRTOS/Src/heap_4.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.obj"
+	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/heap_4.c
+
+CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.i"
+	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/heap_4.c > CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.i
+
+CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.s"
+	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/heap_4.c -o CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.s
+
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/list.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/list.c.obj: ../FreeRTOS/Src/list.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/list.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/list.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/list.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/list.c
 
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/list.c.i: cmake_force
@@ -618,7 +631,7 @@ CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/list.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/port.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/port.c.obj: ../FreeRTOS/Src/port.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/port.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/port.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/port.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/port.c
 
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/port.c.i: cmake_force
@@ -631,7 +644,7 @@ CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/port.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/queue.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/queue.c.obj: ../FreeRTOS/Src/queue.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/queue.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/queue.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/queue.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/queue.c
 
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/queue.c.i: cmake_force
@@ -644,7 +657,7 @@ CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/queue.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/stream_buffer.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/stream_buffer.c.obj: ../FreeRTOS/Src/stream_buffer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/stream_buffer.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/stream_buffer.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/stream_buffer.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/stream_buffer.c
 
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/stream_buffer.c.i: cmake_force
@@ -657,7 +670,7 @@ CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/stream_buffer.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/tasks.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/tasks.c.obj: ../FreeRTOS/Src/tasks.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/tasks.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/tasks.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/tasks.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/tasks.c
 
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/tasks.c.i: cmake_force
@@ -670,7 +683,7 @@ CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/tasks.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/timers.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/timers.c.obj: ../FreeRTOS/Src/timers.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/timers.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/timers.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/timers.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/timers.c
 
 CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/timers.c.i: cmake_force
@@ -683,7 +696,7 @@ CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/timers.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.c.obj: ../HARDWARE/Src/DataScope_DP.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/DataScope_DP.c
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.c.i: cmake_force
@@ -696,7 +709,7 @@ CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/I2C.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/I2C.c.obj: ../HARDWARE/Src/I2C.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/I2C.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/I2C.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/I2C.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/I2C.c
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/I2C.c.i: cmake_force
@@ -709,7 +722,7 @@ CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/I2C.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.c.obj: ../HARDWARE/Src/LED.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/LED.c
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.c.i: cmake_force
@@ -722,7 +735,7 @@ CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/MPU6050.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/MPU6050.c.obj: ../HARDWARE/Src/MPU6050.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/MPU6050.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/MPU6050.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/MPU6050.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/MPU6050.c
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/MPU6050.c.i: cmake_force
@@ -735,7 +748,7 @@ CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/MPU6050.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/adc.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/adc.c.obj: ../HARDWARE/Src/adc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/adc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/adc.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/adc.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/adc.c
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/adc.c.i: cmake_force
@@ -748,7 +761,7 @@ CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/adc.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/can.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/can.c.obj: ../HARDWARE/Src/can.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/can.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/can.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/can.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/can.c
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/can.c.i: cmake_force
@@ -761,7 +774,7 @@ CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/can.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/encoder.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/encoder.c.obj: ../HARDWARE/Src/encoder.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/encoder.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/encoder.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/encoder.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/encoder.c
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/encoder.c.i: cmake_force
@@ -774,7 +787,7 @@ CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/encoder.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/exti.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/exti.c.obj: ../HARDWARE/Src/exti.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/exti.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/exti.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/exti.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/exti.c
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/exti.c.i: cmake_force
@@ -787,7 +800,7 @@ CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/exti.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/key.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/key.c.obj: ../HARDWARE/Src/key.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/key.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/key.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/key.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/key.c
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/key.c.i: cmake_force
@@ -800,7 +813,7 @@ CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/key.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/motor.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/motor.c.obj: ../HARDWARE/Src/motor.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/motor.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/motor.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/motor.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/motor.c
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/motor.c.i: cmake_force
@@ -813,7 +826,7 @@ CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/motor.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/oled.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/oled.c.obj: ../HARDWARE/Src/oled.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/oled.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/oled.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/oled.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/oled.c
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/oled.c.i: cmake_force
@@ -826,7 +839,7 @@ CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/oled.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/pstwo.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/pstwo.c.obj: ../HARDWARE/Src/pstwo.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/pstwo.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/pstwo.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/pstwo.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/pstwo.c
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/pstwo.c.i: cmake_force
@@ -839,7 +852,7 @@ CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/pstwo.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/timer.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/timer.c.obj: ../HARDWARE/Src/timer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/timer.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/timer.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/timer.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/timer.c
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/timer.c.i: cmake_force
@@ -852,7 +865,7 @@ CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/timer.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/usartx.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/usartx.c.obj: ../HARDWARE/Src/usartx.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/usartx.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/usartx.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/usartx.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/usartx.c
 
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/usartx.c.i: cmake_force
@@ -865,7 +878,7 @@ CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/usartx.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/delay.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/delay.c.obj: ../SYSTEM/Src/delay.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/delay.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/delay.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/delay.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/SYSTEM/Src/delay.c
 
 CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/delay.c.i: cmake_force
@@ -878,7 +891,7 @@ CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/delay.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/sys.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/sys.c.obj: ../SYSTEM/Src/sys.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/sys.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/sys.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/sys.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/SYSTEM/Src/sys.c
 
 CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/sys.c.i: cmake_force
@@ -891,7 +904,7 @@ CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/sys.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/usart.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/usart.c.obj: ../SYSTEM/Src/usart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/usart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/usart.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/usart.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/SYSTEM/Src/usart.c
 
 CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/usart.c.i: cmake_force
@@ -904,7 +917,7 @@ CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/usart.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/USER/Src/main.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/USER/Src/main.c.obj: ../USER/Src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/wheel_ros_car.elf.dir/USER/Src/main.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/wheel_ros_car.elf.dir/USER/Src/main.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/USER/Src/main.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/USER/Src/main.c
 
 CMakeFiles/wheel_ros_car.elf.dir/USER/Src/main.c.i: cmake_force
@@ -917,7 +930,7 @@ CMakeFiles/wheel_ros_car.elf.dir/USER/Src/main.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/USER/Src/stm32f4xx_it.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/USER/Src/stm32f4xx_it.c.obj: ../USER/Src/stm32f4xx_it.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/wheel_ros_car.elf.dir/USER/Src/stm32f4xx_it.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/wheel_ros_car.elf.dir/USER/Src/stm32f4xx_it.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/USER/Src/stm32f4xx_it.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/USER/Src/stm32f4xx_it.c
 
 CMakeFiles/wheel_ros_car.elf.dir/USER/Src/stm32f4xx_it.c.i: cmake_force
@@ -930,7 +943,7 @@ CMakeFiles/wheel_ros_car.elf.dir/USER/Src/stm32f4xx_it.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/USER/Src/system_stm32f4xx.c.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/USER/Src/system_stm32f4xx.c.obj: ../USER/Src/system_stm32f4xx.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/wheel_ros_car.elf.dir/USER/Src/system_stm32f4xx.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/wheel_ros_car.elf.dir/USER/Src/system_stm32f4xx.c.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/USER/Src/system_stm32f4xx.c.obj   -c /Users/didi/CLionProjects/wheel_ros_car/USER/Src/system_stm32f4xx.c
 
 CMakeFiles/wheel_ros_car.elf.dir/USER/Src/system_stm32f4xx.c.i: cmake_force
@@ -943,7 +956,7 @@ CMakeFiles/wheel_ros_car.elf.dir/USER/Src/system_stm32f4xx.c.s: cmake_force
 
 CMakeFiles/wheel_ros_car.elf.dir/startup/startup_stm32f407xx.s.obj: CMakeFiles/wheel_ros_car.elf.dir/flags.make
 CMakeFiles/wheel_ros_car.elf.dir/startup/startup_stm32f407xx.s.obj: ../startup/startup_stm32f407xx.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building ASM object CMakeFiles/wheel_ros_car.elf.dir/startup/startup_stm32f407xx.s.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building ASM object CMakeFiles/wheel_ros_car.elf.dir/startup/startup_stm32f407xx.s.obj"
 	/usr/local/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/wheel_ros_car.elf.dir/startup/startup_stm32f407xx.s.obj -c /Users/didi/CLionProjects/wheel_ros_car/startup/startup_stm32f407xx.s
 
 # Object files for target wheel_ros_car.elf
@@ -990,6 +1003,7 @@ wheel_ros_car_elf_OBJECTS = \
 "CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/stm32f4xx_wwdg.c.obj" \
 "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/croutine.c.obj" \
 "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/event_groups.c.obj" \
+"CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.obj" \
 "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/list.c.obj" \
 "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/port.c.obj" \
 "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/queue.c.obj" \
@@ -1063,6 +1077,7 @@ wheel_ros_car.elf: CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/stm32f4xx_usart.c.
 wheel_ros_car.elf: CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/stm32f4xx_wwdg.c.obj
 wheel_ros_car.elf: CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/croutine.c.obj
 wheel_ros_car.elf: CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/event_groups.c.obj
+wheel_ros_car.elf: CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.obj
 wheel_ros_car.elf: CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/list.c.obj
 wheel_ros_car.elf: CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/port.c.obj
 wheel_ros_car.elf: CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/queue.c.obj
@@ -1092,7 +1107,7 @@ wheel_ros_car.elf: CMakeFiles/wheel_ros_car.elf.dir/USER/Src/system_stm32f4xx.c.
 wheel_ros_car.elf: CMakeFiles/wheel_ros_car.elf.dir/startup/startup_stm32f407xx.s.obj
 wheel_ros_car.elf: CMakeFiles/wheel_ros_car.elf.dir/build.make
 wheel_ros_car.elf: CMakeFiles/wheel_ros_car.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Linking C executable wheel_ros_car.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Linking C executable wheel_ros_car.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wheel_ros_car.elf.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building /Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/wheel_ros_car.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building /Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/wheel_ros_car.bin"

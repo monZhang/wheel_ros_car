@@ -71,6 +71,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/didi/CLionProjects/wheel_ros_car/FWLIB/src/stm32f4xx_wwdg.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/stm32f4xx_wwdg.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/croutine.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/croutine.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/event_groups.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/event_groups.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/heap_4.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/list.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/list.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/port.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/port.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/queue.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/queue.c.obj"

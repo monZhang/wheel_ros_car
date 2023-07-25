@@ -896,6 +896,16 @@ timers.h
 event_groups.h
 /Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/event_groups.h
 
+/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/heap_4.c
+stdlib.h
+-
+string.h
+-
+FreeRTOS.h
+/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/FreeRTOS.h
+task.h
+/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/task.h
+
 /Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/list.c
 stdlib.h
 -
@@ -967,12 +977,6 @@ queue.h
 /Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/queue.h
 timers.h
 /Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/timers.h
-
-/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/LED.H
-sys.h
-/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/sys.h
-system.h
-/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/system.h
 
 /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/DataScope_DP.c
 DataScope_DP.h
@@ -1063,8 +1067,8 @@ FreeRTOS.h
 /Users/didi/CLionProjects/wheel_ros_car/SYSTEM/Src/FreeRTOS.h
 
 /Users/didi/CLionProjects/wheel_ros_car/USER/Src/main.c
-../../HARDWARE/Inc/LED.H
-/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/LED.H
+system.h
+/Users/didi/CLionProjects/wheel_ros_car/USER/Src/system.h
 
 /Users/didi/CLionProjects/wheel_ros_car/USER/Src/stm32f4xx_it.c
 stm32f4xx_it.h

@@ -428,6 +428,9 @@
 		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/event_groups.c">
 			<Option target="wheel_ros_car.elf"/>
 		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/heap_4.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
 		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/list.c">
 			<Option target="wheel_ros_car.elf"/>
 		</Unit>

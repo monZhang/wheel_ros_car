@@ -41,6 +41,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/stm32f4xx_wwdg.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/croutine.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/event_groups.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/list.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/port.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/queue.c.obj"

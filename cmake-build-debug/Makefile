@@ -1257,6 +1257,33 @@ FreeRTOS/Src/event_groups.c.s:
 	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/event_groups.c.s
 .PHONY : FreeRTOS/Src/event_groups.c.s
 
+FreeRTOS/Src/heap_4.obj: FreeRTOS/Src/heap_4.c.obj
+
+.PHONY : FreeRTOS/Src/heap_4.obj
+
+# target to build an object file
+FreeRTOS/Src/heap_4.c.obj:
+	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.obj
+.PHONY : FreeRTOS/Src/heap_4.c.obj
+
+FreeRTOS/Src/heap_4.i: FreeRTOS/Src/heap_4.c.i
+
+.PHONY : FreeRTOS/Src/heap_4.i
+
+# target to preprocess a source file
+FreeRTOS/Src/heap_4.c.i:
+	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.i
+.PHONY : FreeRTOS/Src/heap_4.c.i
+
+FreeRTOS/Src/heap_4.s: FreeRTOS/Src/heap_4.c.s
+
+.PHONY : FreeRTOS/Src/heap_4.s
+
+# target to generate assembly for a file
+FreeRTOS/Src/heap_4.c.s:
+	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/heap_4.c.s
+.PHONY : FreeRTOS/Src/heap_4.c.s
+
 FreeRTOS/Src/list.obj: FreeRTOS/Src/list.c.obj
 
 .PHONY : FreeRTOS/Src/list.obj
@@ -2103,6 +2130,9 @@ help:
 	@echo "... FreeRTOS/Src/event_groups.obj"
 	@echo "... FreeRTOS/Src/event_groups.i"
 	@echo "... FreeRTOS/Src/event_groups.s"
+	@echo "... FreeRTOS/Src/heap_4.obj"
+	@echo "... FreeRTOS/Src/heap_4.i"
+	@echo "... FreeRTOS/Src/heap_4.s"
 	@echo "... FreeRTOS/Src/list.obj"
 	@echo "... FreeRTOS/Src/list.i"
 	@echo "... FreeRTOS/Src/list.s"
