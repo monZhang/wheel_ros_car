@@ -2,7 +2,6 @@
 set(CMAKE_DEPENDS_LANGUAGES
   "ASM"
   "C"
-  "CXX"
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_ASM
@@ -78,7 +77,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/stream_buffer.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/stream_buffer.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/tasks.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/tasks.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/timers.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/timers.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/DataScope_DP.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/I2C.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/I2C.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/LED.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/MPU6050.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/MPU6050.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/adc.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/adc.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/can.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/can.c.obj"
@@ -110,31 +111,6 @@ set(CMAKE_TARGET_DEFINITIONS_C
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "../CORE/Inc"
-  "../SYSTEM/Inc"
-  "../FWLIB/Inc"
-  "../FreeRTOS/Inc"
-  "../HARDWARE/Inc"
-  "../BALANCE/Inc"
-  "../USER/Inc"
-  )
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/DataScope_DP.C" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.C.obj"
-  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/LED.C" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.C.obj"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# Preprocessor definitions for this target.
-set(CMAKE_TARGET_DEFINITIONS_CXX
-  "ARM_MATH_CM4"
-  "ARM_MATH_MATRIX_CHECK"
-  "ARM_MATH_ROUNDING"
-  "STM32F407xx"
-  "USE_HAL_DRIVER"
-  )
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../CORE/Inc"
   "../SYSTEM/Inc"
   "../FWLIB/Inc"

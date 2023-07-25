@@ -1419,32 +1419,32 @@ FreeRTOS/Src/timers.c.s:
 	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/timers.c.s
 .PHONY : FreeRTOS/Src/timers.c.s
 
-HARDWARE/Src/DataScope_DP.obj: HARDWARE/Src/DataScope_DP.C.obj
+HARDWARE/Src/DataScope_DP.obj: HARDWARE/Src/DataScope_DP.c.obj
 
 .PHONY : HARDWARE/Src/DataScope_DP.obj
 
 # target to build an object file
-HARDWARE/Src/DataScope_DP.C.obj:
-	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.C.obj
-.PHONY : HARDWARE/Src/DataScope_DP.C.obj
+HARDWARE/Src/DataScope_DP.c.obj:
+	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.c.obj
+.PHONY : HARDWARE/Src/DataScope_DP.c.obj
 
-HARDWARE/Src/DataScope_DP.i: HARDWARE/Src/DataScope_DP.C.i
+HARDWARE/Src/DataScope_DP.i: HARDWARE/Src/DataScope_DP.c.i
 
 .PHONY : HARDWARE/Src/DataScope_DP.i
 
 # target to preprocess a source file
-HARDWARE/Src/DataScope_DP.C.i:
-	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.C.i
-.PHONY : HARDWARE/Src/DataScope_DP.C.i
+HARDWARE/Src/DataScope_DP.c.i:
+	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.c.i
+.PHONY : HARDWARE/Src/DataScope_DP.c.i
 
-HARDWARE/Src/DataScope_DP.s: HARDWARE/Src/DataScope_DP.C.s
+HARDWARE/Src/DataScope_DP.s: HARDWARE/Src/DataScope_DP.c.s
 
 .PHONY : HARDWARE/Src/DataScope_DP.s
 
 # target to generate assembly for a file
-HARDWARE/Src/DataScope_DP.C.s:
-	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.C.s
-.PHONY : HARDWARE/Src/DataScope_DP.C.s
+HARDWARE/Src/DataScope_DP.c.s:
+	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.c.s
+.PHONY : HARDWARE/Src/DataScope_DP.c.s
 
 HARDWARE/Src/I2C.obj: HARDWARE/Src/I2C.c.obj
 
@@ -1473,32 +1473,32 @@ HARDWARE/Src/I2C.c.s:
 	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/I2C.c.s
 .PHONY : HARDWARE/Src/I2C.c.s
 
-HARDWARE/Src/LED.obj: HARDWARE/Src/LED.C.obj
+HARDWARE/Src/LED.obj: HARDWARE/Src/LED.c.obj
 
 .PHONY : HARDWARE/Src/LED.obj
 
 # target to build an object file
-HARDWARE/Src/LED.C.obj:
-	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.C.obj
-.PHONY : HARDWARE/Src/LED.C.obj
+HARDWARE/Src/LED.c.obj:
+	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.c.obj
+.PHONY : HARDWARE/Src/LED.c.obj
 
-HARDWARE/Src/LED.i: HARDWARE/Src/LED.C.i
+HARDWARE/Src/LED.i: HARDWARE/Src/LED.c.i
 
 .PHONY : HARDWARE/Src/LED.i
 
 # target to preprocess a source file
-HARDWARE/Src/LED.C.i:
-	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.C.i
-.PHONY : HARDWARE/Src/LED.C.i
+HARDWARE/Src/LED.c.i:
+	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.c.i
+.PHONY : HARDWARE/Src/LED.c.i
 
-HARDWARE/Src/LED.s: HARDWARE/Src/LED.C.s
+HARDWARE/Src/LED.s: HARDWARE/Src/LED.c.s
 
 .PHONY : HARDWARE/Src/LED.s
 
 # target to generate assembly for a file
-HARDWARE/Src/LED.C.s:
-	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.C.s
-.PHONY : HARDWARE/Src/LED.C.s
+HARDWARE/Src/LED.c.s:
+	$(MAKE) -f CMakeFiles/wheel_ros_car.elf.dir/build.make CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.c.s
+.PHONY : HARDWARE/Src/LED.c.s
 
 HARDWARE/Src/MPU6050.obj: HARDWARE/Src/MPU6050.c.obj
 

@@ -2202,6 +2202,80 @@ CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/timers.c.obj
  ../USER/Inc/stm32f4xx_conf.h
  ../USER/Inc/system_stm32f4xx.h
  /Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/timers.c
+CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.c.obj
+ ../BALANCE/Inc/balance.h
+ ../BALANCE/Inc/robot_select_init.h
+ ../BALANCE/Inc/show.h
+ ../BALANCE/Inc/system.h
+ ../CORE/Inc/arm_math.h
+ ../CORE/Inc/core_cm4.h
+ ../CORE/Inc/core_cm4_simd.h
+ ../CORE/Inc/core_cmFunc.h
+ ../CORE/Inc/core_cmInstr.h
+ ../FWLIB/Inc/misc.h
+ ../FWLIB/Inc/stm32f4xx_adc.h
+ ../FWLIB/Inc/stm32f4xx_can.h
+ ../FWLIB/Inc/stm32f4xx_crc.h
+ ../FWLIB/Inc/stm32f4xx_cryp.h
+ ../FWLIB/Inc/stm32f4xx_dac.h
+ ../FWLIB/Inc/stm32f4xx_dbgmcu.h
+ ../FWLIB/Inc/stm32f4xx_dcmi.h
+ ../FWLIB/Inc/stm32f4xx_dma.h
+ ../FWLIB/Inc/stm32f4xx_dma2d.h
+ ../FWLIB/Inc/stm32f4xx_exti.h
+ ../FWLIB/Inc/stm32f4xx_flash.h
+ ../FWLIB/Inc/stm32f4xx_flash_ramfunc.h
+ ../FWLIB/Inc/stm32f4xx_fsmc.h
+ ../FWLIB/Inc/stm32f4xx_gpio.h
+ ../FWLIB/Inc/stm32f4xx_hash.h
+ ../FWLIB/Inc/stm32f4xx_i2c.h
+ ../FWLIB/Inc/stm32f4xx_iwdg.h
+ ../FWLIB/Inc/stm32f4xx_ltdc.h
+ ../FWLIB/Inc/stm32f4xx_pwr.h
+ ../FWLIB/Inc/stm32f4xx_rcc.h
+ ../FWLIB/Inc/stm32f4xx_rng.h
+ ../FWLIB/Inc/stm32f4xx_rtc.h
+ ../FWLIB/Inc/stm32f4xx_sai.h
+ ../FWLIB/Inc/stm32f4xx_sdio.h
+ ../FWLIB/Inc/stm32f4xx_spi.h
+ ../FWLIB/Inc/stm32f4xx_syscfg.h
+ ../FWLIB/Inc/stm32f4xx_tim.h
+ ../FWLIB/Inc/stm32f4xx_usart.h
+ ../FWLIB/Inc/stm32f4xx_wwdg.h
+ ../FreeRTOS/Inc/FreeRTOS.h
+ ../FreeRTOS/Inc/FreeRTOSConfig.h
+ ../FreeRTOS/Inc/deprecated_definitions.h
+ ../FreeRTOS/Inc/list.h
+ ../FreeRTOS/Inc/mpu_wrappers.h
+ ../FreeRTOS/Inc/newlib-freertos.h
+ ../FreeRTOS/Inc/picolibc-freertos.h
+ ../FreeRTOS/Inc/portable.h
+ ../FreeRTOS/Inc/portmacro.h
+ ../FreeRTOS/Inc/projdefs.h
+ ../FreeRTOS/Inc/queue.h
+ ../FreeRTOS/Inc/semphr.h
+ ../FreeRTOS/Inc/task.h
+ ../FreeRTOS/Inc/timers.h
+ ../HARDWARE/Inc/DataScope_DP.h
+ ../HARDWARE/Inc/I2C.h
+ ../HARDWARE/Inc/LED.H
+ ../HARDWARE/Inc/adc.h
+ ../HARDWARE/Inc/can.h
+ ../HARDWARE/Inc/encoder.h
+ ../HARDWARE/Inc/key.h
+ ../HARDWARE/Inc/motor.h
+ ../HARDWARE/Inc/mpu6050.h
+ ../HARDWARE/Inc/oled.h
+ ../HARDWARE/Inc/pstwo.h
+ ../HARDWARE/Inc/timer.h
+ ../HARDWARE/Inc/usartx.h
+ ../SYSTEM/Inc/delay.h
+ ../SYSTEM/Inc/sys.h
+ ../SYSTEM/Inc/usart.h
+ ../USER/Inc/stm32f4xx.h
+ ../USER/Inc/stm32f4xx_conf.h
+ ../USER/Inc/system_stm32f4xx.h
+ /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/DataScope_DP.c
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/I2C.c.obj
  ../BALANCE/Inc/balance.h
  ../BALANCE/Inc/robot_select_init.h
@@ -2275,6 +2349,80 @@ CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/I2C.c.obj
  ../USER/Inc/stm32f4xx_conf.h
  ../USER/Inc/system_stm32f4xx.h
  /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/I2C.c
+CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.c.obj
+ ../BALANCE/Inc/balance.h
+ ../BALANCE/Inc/robot_select_init.h
+ ../BALANCE/Inc/show.h
+ ../BALANCE/Inc/system.h
+ ../CORE/Inc/arm_math.h
+ ../CORE/Inc/core_cm4.h
+ ../CORE/Inc/core_cm4_simd.h
+ ../CORE/Inc/core_cmFunc.h
+ ../CORE/Inc/core_cmInstr.h
+ ../FWLIB/Inc/misc.h
+ ../FWLIB/Inc/stm32f4xx_adc.h
+ ../FWLIB/Inc/stm32f4xx_can.h
+ ../FWLIB/Inc/stm32f4xx_crc.h
+ ../FWLIB/Inc/stm32f4xx_cryp.h
+ ../FWLIB/Inc/stm32f4xx_dac.h
+ ../FWLIB/Inc/stm32f4xx_dbgmcu.h
+ ../FWLIB/Inc/stm32f4xx_dcmi.h
+ ../FWLIB/Inc/stm32f4xx_dma.h
+ ../FWLIB/Inc/stm32f4xx_dma2d.h
+ ../FWLIB/Inc/stm32f4xx_exti.h
+ ../FWLIB/Inc/stm32f4xx_flash.h
+ ../FWLIB/Inc/stm32f4xx_flash_ramfunc.h
+ ../FWLIB/Inc/stm32f4xx_fsmc.h
+ ../FWLIB/Inc/stm32f4xx_gpio.h
+ ../FWLIB/Inc/stm32f4xx_hash.h
+ ../FWLIB/Inc/stm32f4xx_i2c.h
+ ../FWLIB/Inc/stm32f4xx_iwdg.h
+ ../FWLIB/Inc/stm32f4xx_ltdc.h
+ ../FWLIB/Inc/stm32f4xx_pwr.h
+ ../FWLIB/Inc/stm32f4xx_rcc.h
+ ../FWLIB/Inc/stm32f4xx_rng.h
+ ../FWLIB/Inc/stm32f4xx_rtc.h
+ ../FWLIB/Inc/stm32f4xx_sai.h
+ ../FWLIB/Inc/stm32f4xx_sdio.h
+ ../FWLIB/Inc/stm32f4xx_spi.h
+ ../FWLIB/Inc/stm32f4xx_syscfg.h
+ ../FWLIB/Inc/stm32f4xx_tim.h
+ ../FWLIB/Inc/stm32f4xx_usart.h
+ ../FWLIB/Inc/stm32f4xx_wwdg.h
+ ../FreeRTOS/Inc/FreeRTOS.h
+ ../FreeRTOS/Inc/FreeRTOSConfig.h
+ ../FreeRTOS/Inc/deprecated_definitions.h
+ ../FreeRTOS/Inc/list.h
+ ../FreeRTOS/Inc/mpu_wrappers.h
+ ../FreeRTOS/Inc/newlib-freertos.h
+ ../FreeRTOS/Inc/picolibc-freertos.h
+ ../FreeRTOS/Inc/portable.h
+ ../FreeRTOS/Inc/portmacro.h
+ ../FreeRTOS/Inc/projdefs.h
+ ../FreeRTOS/Inc/queue.h
+ ../FreeRTOS/Inc/semphr.h
+ ../FreeRTOS/Inc/task.h
+ ../FreeRTOS/Inc/timers.h
+ ../HARDWARE/Inc/I2C.h
+ ../HARDWARE/Inc/LED.H
+ ../HARDWARE/Inc/adc.h
+ ../HARDWARE/Inc/can.h
+ ../HARDWARE/Inc/encoder.h
+ ../HARDWARE/Inc/key.h
+ ../HARDWARE/Inc/led.h
+ ../HARDWARE/Inc/motor.h
+ ../HARDWARE/Inc/mpu6050.h
+ ../HARDWARE/Inc/oled.h
+ ../HARDWARE/Inc/pstwo.h
+ ../HARDWARE/Inc/timer.h
+ ../HARDWARE/Inc/usartx.h
+ ../SYSTEM/Inc/delay.h
+ ../SYSTEM/Inc/sys.h
+ ../SYSTEM/Inc/usart.h
+ ../USER/Inc/stm32f4xx.h
+ ../USER/Inc/stm32f4xx_conf.h
+ ../USER/Inc/system_stm32f4xx.h
+ /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/LED.c
 CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/MPU6050.c.obj
  ../BALANCE/Inc/balance.h
  ../BALANCE/Inc/robot_select_init.h
@@ -3249,7 +3397,6 @@ CMakeFiles/wheel_ros_car.elf.dir/USER/Src/main.c.obj
  ../FreeRTOS/Inc/task.h
  ../FreeRTOS/Inc/timers.h
  ../HARDWARE/Inc/I2C.h
- ../HARDWARE/Inc/LED.H
  ../HARDWARE/Inc/adc.h
  ../HARDWARE/Inc/can.h
  ../HARDWARE/Inc/encoder.h
@@ -3266,6 +3413,7 @@ CMakeFiles/wheel_ros_car.elf.dir/USER/Src/main.c.obj
  ../USER/Inc/stm32f4xx.h
  ../USER/Inc/stm32f4xx_conf.h
  ../USER/Inc/system_stm32f4xx.h
+ /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/LED.H
  /Users/didi/CLionProjects/wheel_ros_car/USER/Src/main.c
 CMakeFiles/wheel_ros_car.elf.dir/USER/Src/stm32f4xx_it.c.obj
  ../CORE/Inc/arm_math.h
@@ -3348,151 +3496,3 @@ CMakeFiles/wheel_ros_car.elf.dir/USER/Src/system_stm32f4xx.c.obj
  ../USER/Inc/stm32f4xx_conf.h
  ../USER/Inc/system_stm32f4xx.h
  /Users/didi/CLionProjects/wheel_ros_car/USER/Src/system_stm32f4xx.c
-CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.C.obj
- ../BALANCE/Inc/balance.h
- ../BALANCE/Inc/robot_select_init.h
- ../BALANCE/Inc/show.h
- ../BALANCE/Inc/system.h
- ../CORE/Inc/arm_math.h
- ../CORE/Inc/core_cm4.h
- ../CORE/Inc/core_cm4_simd.h
- ../CORE/Inc/core_cmFunc.h
- ../CORE/Inc/core_cmInstr.h
- ../FWLIB/Inc/misc.h
- ../FWLIB/Inc/stm32f4xx_adc.h
- ../FWLIB/Inc/stm32f4xx_can.h
- ../FWLIB/Inc/stm32f4xx_crc.h
- ../FWLIB/Inc/stm32f4xx_cryp.h
- ../FWLIB/Inc/stm32f4xx_dac.h
- ../FWLIB/Inc/stm32f4xx_dbgmcu.h
- ../FWLIB/Inc/stm32f4xx_dcmi.h
- ../FWLIB/Inc/stm32f4xx_dma.h
- ../FWLIB/Inc/stm32f4xx_dma2d.h
- ../FWLIB/Inc/stm32f4xx_exti.h
- ../FWLIB/Inc/stm32f4xx_flash.h
- ../FWLIB/Inc/stm32f4xx_flash_ramfunc.h
- ../FWLIB/Inc/stm32f4xx_fsmc.h
- ../FWLIB/Inc/stm32f4xx_gpio.h
- ../FWLIB/Inc/stm32f4xx_hash.h
- ../FWLIB/Inc/stm32f4xx_i2c.h
- ../FWLIB/Inc/stm32f4xx_iwdg.h
- ../FWLIB/Inc/stm32f4xx_ltdc.h
- ../FWLIB/Inc/stm32f4xx_pwr.h
- ../FWLIB/Inc/stm32f4xx_rcc.h
- ../FWLIB/Inc/stm32f4xx_rng.h
- ../FWLIB/Inc/stm32f4xx_rtc.h
- ../FWLIB/Inc/stm32f4xx_sai.h
- ../FWLIB/Inc/stm32f4xx_sdio.h
- ../FWLIB/Inc/stm32f4xx_spi.h
- ../FWLIB/Inc/stm32f4xx_syscfg.h
- ../FWLIB/Inc/stm32f4xx_tim.h
- ../FWLIB/Inc/stm32f4xx_usart.h
- ../FWLIB/Inc/stm32f4xx_wwdg.h
- ../FreeRTOS/Inc/FreeRTOS.h
- ../FreeRTOS/Inc/FreeRTOSConfig.h
- ../FreeRTOS/Inc/deprecated_definitions.h
- ../FreeRTOS/Inc/list.h
- ../FreeRTOS/Inc/mpu_wrappers.h
- ../FreeRTOS/Inc/newlib-freertos.h
- ../FreeRTOS/Inc/picolibc-freertos.h
- ../FreeRTOS/Inc/portable.h
- ../FreeRTOS/Inc/portmacro.h
- ../FreeRTOS/Inc/projdefs.h
- ../FreeRTOS/Inc/queue.h
- ../FreeRTOS/Inc/semphr.h
- ../FreeRTOS/Inc/task.h
- ../FreeRTOS/Inc/timers.h
- ../HARDWARE/Inc/DataScope_DP.h
- ../HARDWARE/Inc/I2C.h
- ../HARDWARE/Inc/LED.H
- ../HARDWARE/Inc/adc.h
- ../HARDWARE/Inc/can.h
- ../HARDWARE/Inc/encoder.h
- ../HARDWARE/Inc/key.h
- ../HARDWARE/Inc/motor.h
- ../HARDWARE/Inc/mpu6050.h
- ../HARDWARE/Inc/oled.h
- ../HARDWARE/Inc/pstwo.h
- ../HARDWARE/Inc/timer.h
- ../HARDWARE/Inc/usartx.h
- ../SYSTEM/Inc/delay.h
- ../SYSTEM/Inc/sys.h
- ../SYSTEM/Inc/usart.h
- ../USER/Inc/stm32f4xx.h
- ../USER/Inc/stm32f4xx_conf.h
- ../USER/Inc/system_stm32f4xx.h
- /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/DataScope_DP.C
-CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.C.obj
- ../BALANCE/Inc/balance.h
- ../BALANCE/Inc/robot_select_init.h
- ../BALANCE/Inc/show.h
- ../BALANCE/Inc/system.h
- ../CORE/Inc/arm_math.h
- ../CORE/Inc/core_cm4.h
- ../CORE/Inc/core_cm4_simd.h
- ../CORE/Inc/core_cmFunc.h
- ../CORE/Inc/core_cmInstr.h
- ../FWLIB/Inc/misc.h
- ../FWLIB/Inc/stm32f4xx_adc.h
- ../FWLIB/Inc/stm32f4xx_can.h
- ../FWLIB/Inc/stm32f4xx_crc.h
- ../FWLIB/Inc/stm32f4xx_cryp.h
- ../FWLIB/Inc/stm32f4xx_dac.h
- ../FWLIB/Inc/stm32f4xx_dbgmcu.h
- ../FWLIB/Inc/stm32f4xx_dcmi.h
- ../FWLIB/Inc/stm32f4xx_dma.h
- ../FWLIB/Inc/stm32f4xx_dma2d.h
- ../FWLIB/Inc/stm32f4xx_exti.h
- ../FWLIB/Inc/stm32f4xx_flash.h
- ../FWLIB/Inc/stm32f4xx_flash_ramfunc.h
- ../FWLIB/Inc/stm32f4xx_fsmc.h
- ../FWLIB/Inc/stm32f4xx_gpio.h
- ../FWLIB/Inc/stm32f4xx_hash.h
- ../FWLIB/Inc/stm32f4xx_i2c.h
- ../FWLIB/Inc/stm32f4xx_iwdg.h
- ../FWLIB/Inc/stm32f4xx_ltdc.h
- ../FWLIB/Inc/stm32f4xx_pwr.h
- ../FWLIB/Inc/stm32f4xx_rcc.h
- ../FWLIB/Inc/stm32f4xx_rng.h
- ../FWLIB/Inc/stm32f4xx_rtc.h
- ../FWLIB/Inc/stm32f4xx_sai.h
- ../FWLIB/Inc/stm32f4xx_sdio.h
- ../FWLIB/Inc/stm32f4xx_spi.h
- ../FWLIB/Inc/stm32f4xx_syscfg.h
- ../FWLIB/Inc/stm32f4xx_tim.h
- ../FWLIB/Inc/stm32f4xx_usart.h
- ../FWLIB/Inc/stm32f4xx_wwdg.h
- ../FreeRTOS/Inc/FreeRTOS.h
- ../FreeRTOS/Inc/FreeRTOSConfig.h
- ../FreeRTOS/Inc/deprecated_definitions.h
- ../FreeRTOS/Inc/list.h
- ../FreeRTOS/Inc/mpu_wrappers.h
- ../FreeRTOS/Inc/newlib-freertos.h
- ../FreeRTOS/Inc/picolibc-freertos.h
- ../FreeRTOS/Inc/portable.h
- ../FreeRTOS/Inc/portmacro.h
- ../FreeRTOS/Inc/projdefs.h
- ../FreeRTOS/Inc/queue.h
- ../FreeRTOS/Inc/semphr.h
- ../FreeRTOS/Inc/task.h
- ../FreeRTOS/Inc/timers.h
- ../HARDWARE/Inc/I2C.h
- ../HARDWARE/Inc/LED.H
- ../HARDWARE/Inc/adc.h
- ../HARDWARE/Inc/can.h
- ../HARDWARE/Inc/encoder.h
- ../HARDWARE/Inc/key.h
- ../HARDWARE/Inc/led.h
- ../HARDWARE/Inc/motor.h
- ../HARDWARE/Inc/mpu6050.h
- ../HARDWARE/Inc/oled.h
- ../HARDWARE/Inc/pstwo.h
- ../HARDWARE/Inc/timer.h
- ../HARDWARE/Inc/usartx.h
- ../SYSTEM/Inc/delay.h
- ../SYSTEM/Inc/sys.h
- ../SYSTEM/Inc/usart.h
- ../USER/Inc/stm32f4xx.h
- ../USER/Inc/stm32f4xx_conf.h
- ../USER/Inc/system_stm32f4xx.h
- /Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/LED.C

@@ -497,13 +497,13 @@
 		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/.DS_Store">
 			<Option target="wheel_ros_car.elf"/>
 		</Unit>
-		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/DataScope_DP.C">
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/DataScope_DP.c">
 			<Option target="wheel_ros_car.elf"/>
 		</Unit>
 		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/I2C.c">
 			<Option target="wheel_ros_car.elf"/>
 		</Unit>
-		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/LED.C">
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/LED.c">
 			<Option target="wheel_ros_car.elf"/>
 		</Unit>
 		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/MPU6050.c">

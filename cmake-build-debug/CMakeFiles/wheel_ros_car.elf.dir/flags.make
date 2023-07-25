@@ -3,7 +3,6 @@
 
 # compile ASM with /usr/local/bin/arm-none-eabi-gcc
 # compile C with /usr/local/bin/arm-none-eabi-gcc
-# compile CXX with /usr/local/bin/arm-none-eabi-g++
 ASM_FLAGS = -g   -mfloat-abi=hard -mfpu=fpv4-sp-d16
 
 ASM_DEFINES = -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DSTM32F407xx -DUSE_HAL_DRIVER
@@ -15,10 +14,4 @@ C_FLAGS = -mcpu=cortex-m4  -mthumb -mthumb-interwork -ffunction-sections -fdata-
 C_DEFINES = -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DSTM32F407xx -DUSE_HAL_DRIVER
 
 C_INCLUDES = -I/Users/didi/CLionProjects/wheel_ros_car/CORE/Inc -I/Users/didi/CLionProjects/wheel_ros_car/SYSTEM/Inc -I/Users/didi/CLionProjects/wheel_ros_car/FWLIB/Inc -I/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc -I/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc -I/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Inc -I/Users/didi/CLionProjects/wheel_ros_car/USER/Inc 
-
-CXX_FLAGS = -mcpu=cortex-m4  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=c++11 -g   -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu++11
-
-CXX_DEFINES = -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DSTM32F407xx -DUSE_HAL_DRIVER
-
-CXX_INCLUDES = -I/Users/didi/CLionProjects/wheel_ros_car/CORE/Inc -I/Users/didi/CLionProjects/wheel_ros_car/SYSTEM/Inc -I/Users/didi/CLionProjects/wheel_ros_car/FWLIB/Inc -I/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc -I/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc -I/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Inc -I/Users/didi/CLionProjects/wheel_ros_car/USER/Inc 
 

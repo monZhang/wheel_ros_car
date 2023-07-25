@@ -2,7 +2,7 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
     <file url="file://$PROJECT_DIR$/HARDWARE/Inc/can.h" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/HARDWARE/Src/LED.C" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/HARDWARE/Src/LED.c" charset="GBK" />
     <file url="file://$PROJECT_DIR$/HARDWARE/Src/adc.c" charset="GBK" />
     <file url="file://$PROJECT_DIR$/USER/Src/main.c" charset="GBK" />
     <file url="PROJECT" charset="GBK" />

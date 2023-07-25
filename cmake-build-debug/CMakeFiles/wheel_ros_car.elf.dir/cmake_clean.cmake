@@ -47,9 +47,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/stream_buffer.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/tasks.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/timers.c.obj"
-  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.C.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/I2C.c.obj"
-  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.C.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/MPU6050.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/adc.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/can.c.obj"
@@ -73,6 +73,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang ASM C CXX)
+foreach(lang ASM C)
   include(CMakeFiles/wheel_ros_car.elf.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()
