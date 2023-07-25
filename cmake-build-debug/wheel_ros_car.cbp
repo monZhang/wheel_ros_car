@@ -44,11 +44,17 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DARM_MATH_CM4"/>
+					<Add option="-DARM_MATH_MATRIX_CHECK"/>
+					<Add option="-DARM_MATH_ROUNDING"/>
 					<Add option="-DUSE_HAL_DRIVER"/>
 					<Add option="-DSTM32F407xx"/>
 					<Add directory="/Users/didi/CLionProjects/wheel_ros_car/CORE/Inc"/>
 					<Add directory="/Users/didi/CLionProjects/wheel_ros_car/SYSTEM/Inc"/>
 					<Add directory="/Users/didi/CLionProjects/wheel_ros_car/FWLIB/Inc"/>
+					<Add directory="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc"/>
+					<Add directory="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc"/>
+					<Add directory="/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Inc"/>
 					<Add directory="/Users/didi/CLionProjects/wheel_ros_car/USER/Inc"/>
 					<Add directory="/usr/local/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1"/>
 					<Add directory="/usr/local/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi"/>
@@ -71,11 +77,17 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DARM_MATH_CM4"/>
+					<Add option="-DARM_MATH_MATRIX_CHECK"/>
+					<Add option="-DARM_MATH_ROUNDING"/>
 					<Add option="-DUSE_HAL_DRIVER"/>
 					<Add option="-DSTM32F407xx"/>
 					<Add directory="/Users/didi/CLionProjects/wheel_ros_car/CORE/Inc"/>
 					<Add directory="/Users/didi/CLionProjects/wheel_ros_car/SYSTEM/Inc"/>
 					<Add directory="/Users/didi/CLionProjects/wheel_ros_car/FWLIB/Inc"/>
+					<Add directory="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc"/>
+					<Add directory="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc"/>
+					<Add directory="/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Inc"/>
 					<Add directory="/Users/didi/CLionProjects/wheel_ros_car/USER/Inc"/>
 					<Add directory="/usr/local/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1"/>
 					<Add directory="/usr/local/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi"/>
@@ -92,6 +104,45 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Inc/.DS_Store">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Inc/balance.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Inc/filter.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Inc/robot_select_init.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Inc/show.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Inc/system.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Src/.DS_Store">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Src/balance.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Src/filter.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Src/robot_select_init.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Src/show.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Src/system.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/CORE/Inc/arm_math.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
 		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/CORE/Inc/core_cm4.h">
 			<Option target="wheel_ros_car.elf"/>
 		</Unit>
@@ -102,24 +153,6 @@
 			<Option target="wheel_ros_car.elf"/>
 		</Unit>
 		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/CORE/Inc/core_cmInstr.h">
-			<Option target="wheel_ros_car.elf"/>
-		</Unit>
-		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/CORE/Inc/stm32f4xx.h">
-			<Option target="wheel_ros_car.elf"/>
-		</Unit>
-		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/CORE/Inc/stm32f4xx_conf.h">
-			<Option target="wheel_ros_car.elf"/>
-		</Unit>
-		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/CORE/Inc/stm32f4xx_it.h">
-			<Option target="wheel_ros_car.elf"/>
-		</Unit>
-		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/CORE/Inc/system_stm32f4xx.h">
-			<Option target="wheel_ros_car.elf"/>
-		</Unit>
-		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/CORE/Src/stm32f4xx_it.c">
-			<Option target="wheel_ros_car.elf"/>
-		</Unit>
-		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/CORE/Src/system_stm32f4xx.c">
 			<Option target="wheel_ros_car.elf"/>
 		</Unit>
 		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FWLIB/inc/misc.h">
@@ -317,6 +350,195 @@
 		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FWLIB/src/stm32f4xx_wwdg.c">
 			<Option target="wheel_ros_car.elf"/>
 		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/.DS_Store">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/FreeRTOS.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/FreeRTOSConfig.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/StackMacros.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/atomic.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/croutine.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/deprecated_definitions.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/event_groups.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/list.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/message_buffer.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/mpu_prototypes.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/mpu_wrappers.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/newlib-freertos.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/picolibc-freertos.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/portable.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/portmacro.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/projdefs.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/queue.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/semphr.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/stack_macros.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/stdint.readme">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/stream_buffer.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/task.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Inc/timers.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/croutine.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/event_groups.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/list.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/port.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/queue.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/stream_buffer.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/tasks.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/timers.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/.DS_Store">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/DataScope_DP.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/I2C.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/LED.H">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/adc.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/can.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/encoder.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/exti.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/key.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/motor.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/mpu6050.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/oled.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/oledfont.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/pstwo.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/timer.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Inc/usartx.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/.DS_Store">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/DataScope_DP.C">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/I2C.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/LED.C">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/MPU6050.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/adc.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/can.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/encoder.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/exti.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/key.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/motor.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/oled.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/pstwo.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/timer.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/usartx.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
 		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/STM32F407VETx_FLASH.ld">
 			<Option target="wheel_ros_car.elf"/>
 		</Unit>
@@ -338,7 +560,25 @@
 		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/SYSTEM/Src/usart.c">
 			<Option target="wheel_ros_car.elf"/>
 		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/USER/Inc/stm32f4xx.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/USER/Inc/stm32f4xx_conf.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/USER/Inc/stm32f4xx_it.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/USER/Inc/system_stm32f4xx.h">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
 		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/USER/Src/main.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/USER/Src/stm32f4xx_it.c">
+			<Option target="wheel_ros_car.elf"/>
+		</Unit>
+		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/USER/Src/system_stm32f4xx.c">
 			<Option target="wheel_ros_car.elf"/>
 		</Unit>
 		<Unit filename="/Users/didi/CLionProjects/wheel_ros_car/startup/startup_stm32f407xx.s">

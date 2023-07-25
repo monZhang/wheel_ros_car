@@ -2,6 +2,7 @@
 set(CMAKE_DEPENDS_LANGUAGES
   "ASM"
   "C"
+  "CXX"
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_ASM
@@ -11,6 +12,9 @@ set(CMAKE_ASM_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_ASM
+  "ARM_MATH_CM4"
+  "ARM_MATH_MATRIX_CHECK"
+  "ARM_MATH_ROUNDING"
   "STM32F407xx"
   "USE_HAL_DRIVER"
   )
@@ -20,11 +24,17 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "../CORE/Inc"
   "../SYSTEM/Inc"
   "../FWLIB/Inc"
+  "../FreeRTOS/Inc"
+  "../HARDWARE/Inc"
+  "../BALANCE/Inc"
   "../USER/Inc"
   )
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/didi/CLionProjects/wheel_ros_car/CORE/Src/stm32f4xx_it.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/CORE/Src/stm32f4xx_it.c.obj"
-  "/Users/didi/CLionProjects/wheel_ros_car/CORE/Src/system_stm32f4xx.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/CORE/Src/system_stm32f4xx.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Src/balance.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/BALANCE/Src/balance.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Src/filter.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/BALANCE/Src/filter.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Src/robot_select_init.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/BALANCE/Src/robot_select_init.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Src/show.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/BALANCE/Src/show.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/BALANCE/Src/system.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/BALANCE/Src/system.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/FWLIB/src/misc.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/misc.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/FWLIB/src/stm32f4xx_adc.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/stm32f4xx_adc.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/FWLIB/src/stm32f4xx_can.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/stm32f4xx_can.c.obj"
@@ -60,15 +70,40 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/didi/CLionProjects/wheel_ros_car/FWLIB/src/stm32f4xx_tim.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/stm32f4xx_tim.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/FWLIB/src/stm32f4xx_usart.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/stm32f4xx_usart.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/FWLIB/src/stm32f4xx_wwdg.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/stm32f4xx_wwdg.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/croutine.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/croutine.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/event_groups.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/event_groups.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/list.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/list.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/port.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/port.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/queue.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/queue.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/stream_buffer.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/stream_buffer.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/tasks.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/tasks.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/FreeRTOS/Src/timers.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/timers.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/I2C.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/I2C.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/MPU6050.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/MPU6050.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/adc.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/adc.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/can.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/can.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/encoder.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/encoder.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/exti.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/exti.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/key.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/key.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/motor.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/motor.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/oled.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/oled.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/pstwo.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/pstwo.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/timer.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/timer.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/usartx.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/usartx.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/SYSTEM/Src/delay.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/delay.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/SYSTEM/Src/sys.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/sys.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/SYSTEM/Src/usart.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/usart.c.obj"
   "/Users/didi/CLionProjects/wheel_ros_car/USER/Src/main.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/USER/Src/main.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/USER/Src/stm32f4xx_it.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/USER/Src/stm32f4xx_it.c.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/USER/Src/system_stm32f4xx.c" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/USER/Src/system_stm32f4xx.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
+  "ARM_MATH_CM4"
+  "ARM_MATH_MATRIX_CHECK"
+  "ARM_MATH_ROUNDING"
   "STM32F407xx"
   "USE_HAL_DRIVER"
   )
@@ -78,6 +113,34 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../CORE/Inc"
   "../SYSTEM/Inc"
   "../FWLIB/Inc"
+  "../FreeRTOS/Inc"
+  "../HARDWARE/Inc"
+  "../BALANCE/Inc"
+  "../USER/Inc"
+  )
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/DataScope_DP.C" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.C.obj"
+  "/Users/didi/CLionProjects/wheel_ros_car/HARDWARE/Src/LED.C" "/Users/didi/CLionProjects/wheel_ros_car/cmake-build-debug/CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.C.obj"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "ARM_MATH_CM4"
+  "ARM_MATH_MATRIX_CHECK"
+  "ARM_MATH_ROUNDING"
+  "STM32F407xx"
+  "USE_HAL_DRIVER"
+  )
+
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../CORE/Inc"
+  "../SYSTEM/Inc"
+  "../FWLIB/Inc"
+  "../FreeRTOS/Inc"
+  "../HARDWARE/Inc"
+  "../BALANCE/Inc"
   "../USER/Inc"
   )
 

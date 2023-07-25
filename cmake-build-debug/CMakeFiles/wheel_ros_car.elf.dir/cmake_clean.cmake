@@ -1,6 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/wheel_ros_car.elf.dir/CORE/Src/stm32f4xx_it.c.obj"
-  "CMakeFiles/wheel_ros_car.elf.dir/CORE/Src/system_stm32f4xx.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/BALANCE/Src/balance.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/BALANCE/Src/filter.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/BALANCE/Src/robot_select_init.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/BALANCE/Src/show.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/BALANCE/Src/system.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/misc.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/stm32f4xx_adc.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/stm32f4xx_can.c.obj"
@@ -36,16 +39,40 @@ file(REMOVE_RECURSE
   "CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/stm32f4xx_tim.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/stm32f4xx_usart.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/FWLIB/src/stm32f4xx_wwdg.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/croutine.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/event_groups.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/list.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/port.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/queue.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/stream_buffer.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/tasks.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/FreeRTOS/Src/timers.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/DataScope_DP.C.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/I2C.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/LED.C.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/MPU6050.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/adc.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/can.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/encoder.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/exti.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/key.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/motor.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/oled.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/pstwo.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/timer.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/HARDWARE/Src/usartx.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/delay.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/sys.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/SYSTEM/Src/usart.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/USER/Src/main.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/USER/Src/stm32f4xx_it.c.obj"
+  "CMakeFiles/wheel_ros_car.elf.dir/USER/Src/system_stm32f4xx.c.obj"
   "CMakeFiles/wheel_ros_car.elf.dir/startup/startup_stm32f407xx.s.obj"
   "wheel_ros_car.elf"
   "wheel_ros_car.elf.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang ASM C)
+foreach(lang ASM C CXX)
   include(CMakeFiles/wheel_ros_car.elf.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

@@ -12,15 +12,15 @@
   *          is using in the C source code, usually in main.c. This file contains:
   *           - Configuration section that allows to select:
   *              - The device used in the target application
-  *              - To use or not the peripheralï¿½s drivers in application code(i.e. 
-  *                code will be based on direct access to peripheralï¿½s registers 
+  *              - To use or not the peripheral’s drivers in application code(i.e. 
+  *                code will be based on direct access to peripheral’s registers 
   *                rather than drivers API), this option is controlled by 
   *                "#define USE_STDPERIPH_DRIVER"
   *              - To change few application-specific parameters such as the HSE 
   *                crystal frequency
   *           - Data structures and the address mapping for all peripherals
   *           - Peripheral's registers declarations and bits definition
-  *           - Macros to access peripheralï¿½s registers hardware
+  *           - Macros to access peripheral’s registers hardware
   *  
   ******************************************************************************
   * @attention
@@ -49,7 +49,6 @@
 /** @addtogroup stm32f4xx
   * @{
   */
-
 #define USE_STDPERIPH_DRIVER
 #define STM32F40_41xxx
 
@@ -167,7 +166,7 @@
 #define __NVIC_PRIO_BITS          4       /*!< STM32F4XX uses 4 Bits for the Priority Levels */
 #define __Vendor_SysTickConfig    0       /*!< Set to 1 if different SysTick Config is used  */
 #define __FPU_PRESENT             1       /*!< FPU present                                   */
-
+#define __FPU_USED                1
 /**
  * @brief STM32F4XX Interrupt Number Definition, according to the selected device 
  *        in @ref Library_configuration_section 
@@ -473,6 +472,7 @@ typedef enum IRQn
 #include "core_cm4.h"             /* Cortex-M4 processor and core peripherals */
 #include "system_stm32f4xx.h"
 #include <stdint.h>
+#include "arm_math.h"
 
 /** @addtogroup Exported_types
   * @{
