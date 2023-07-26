@@ -64,7 +64,7 @@
 /** @defgroup FLASH RAMFUNC 
   * @brief FLASH RAMFUNC driver modules
   * @{
-  */ 
+  */
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -102,18 +102,14 @@
   *          This parameter can be: ENABLE or DISABLE.  
   * @retval None
   */
-__RAM_FUNC FLASH_FlashInterfaceCmd(FunctionalState NewState)
-{
-  if (NewState != DISABLE)
-  {
-    /* Start the flash interface while System Run */
-    CLEAR_BIT(PWR->CR, PWR_CR_FISSR);
-  }
-  else
-  {
-    /* Stop the flash interface while System Run */  
-    SET_BIT(PWR->CR, PWR_CR_FISSR);
-  }
+__RAM_FUNC FLASH_FlashInterfaceCmd(FunctionalState NewState) {
+    if (NewState != DISABLE) {
+        /* Start the flash interface while System Run */
+        CLEAR_BIT(PWR->CR, PWR_CR_FISSR);
+    } else {
+        /* Stop the flash interface while System Run */
+        SET_BIT(PWR->CR, PWR_CR_FISSR);
+    }
 }
 
 /**
@@ -125,18 +121,14 @@ __RAM_FUNC FLASH_FlashInterfaceCmd(FunctionalState NewState)
   *          This parameter can be: ENABLE or DISABLE.  
   * @retval None
   */
-__RAM_FUNC FLASH_FlashSleepModeCmd(FunctionalState NewState)
-{
-  if (NewState != DISABLE)
-  {
-    /* Enable the flash sleep while System Run */
-    SET_BIT(PWR->CR, PWR_CR_FMSSR);
-  }
-  else
-  {
-    /* Disable the flash sleep while System Run */
-    CLEAR_BIT(PWR->CR, PWR_CR_FMSSR);
-  }
+__RAM_FUNC FLASH_FlashSleepModeCmd(FunctionalState NewState) {
+    if (NewState != DISABLE) {
+        /* Enable the flash sleep while System Run */
+        SET_BIT(PWR->CR, PWR_CR_FMSSR);
+    } else {
+        /* Disable the flash sleep while System Run */
+        CLEAR_BIT(PWR->CR, PWR_CR_FMSSR);
+    }
 }
 
 /**

@@ -30,7 +30,7 @@
 #define __STM32F4xx_RCC_H
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -42,23 +42,22 @@
 
 /** @addtogroup RCC
   * @{
-  */ 
+  */
 
 /* Exported types ------------------------------------------------------------*/
-typedef struct
-{
-  uint32_t SYSCLK_Frequency; /*!<  SYSCLK clock frequency expressed in Hz */
-  uint32_t HCLK_Frequency;   /*!<  HCLK clock frequency expressed in Hz   */
-  uint32_t PCLK1_Frequency;  /*!<  PCLK1 clock frequency expressed in Hz  */
-  uint32_t PCLK2_Frequency;  /*!<  PCLK2 clock frequency expressed in Hz  */
-}RCC_ClocksTypeDef;
+typedef struct {
+    uint32_t SYSCLK_Frequency; /*!<  SYSCLK clock frequency expressed in Hz */
+    uint32_t HCLK_Frequency;   /*!<  HCLK clock frequency expressed in Hz   */
+    uint32_t PCLK1_Frequency;  /*!<  PCLK1 clock frequency expressed in Hz  */
+    uint32_t PCLK2_Frequency;  /*!<  PCLK2 clock frequency expressed in Hz  */
+} RCC_ClocksTypeDef;
 
 /* Exported constants --------------------------------------------------------*/
 
 /** @defgroup RCC_Exported_Constants
   * @{
   */
-  
+
 /** @defgroup RCC_HSE_configuration 
   * @{
   */
@@ -69,7 +68,7 @@ typedef struct
                          ((HSE) == RCC_HSE_Bypass))
 /**
   * @}
-  */ 
+  */
 
 /** @defgroup RCC_LSE_Dual_Mode_Selection
   * @{
@@ -93,15 +92,15 @@ typedef struct
 #define IS_RCC_PLLN_VALUE(VALUE) ((192 <= (VALUE)) && ((VALUE) <= 432))
 #define IS_RCC_PLLP_VALUE(VALUE) (((VALUE) == 2) || ((VALUE) == 4) || ((VALUE) == 6) || ((VALUE) == 8))
 #define IS_RCC_PLLQ_VALUE(VALUE) ((4 <= (VALUE)) && ((VALUE) <= 15))
- 
+
 #define IS_RCC_PLLI2SN_VALUE(VALUE) ((192 <= (VALUE)) && ((VALUE) <= 432))
-#define IS_RCC_PLLI2SR_VALUE(VALUE) ((2 <= (VALUE)) && ((VALUE) <= 7))  
-#define IS_RCC_PLLI2SM_VALUE(VALUE) ((VALUE) <= 63)  
+#define IS_RCC_PLLI2SR_VALUE(VALUE) ((2 <= (VALUE)) && ((VALUE) <= 7))
+#define IS_RCC_PLLI2SM_VALUE(VALUE) ((VALUE) <= 63)
 
 #define IS_RCC_PLLI2SQ_VALUE(VALUE) ((2 <= (VALUE)) && ((VALUE) <= 15))
 #define IS_RCC_PLLSAIN_VALUE(VALUE) ((192 <= (VALUE)) && ((VALUE) <= 432))
 #define IS_RCC_PLLSAIQ_VALUE(VALUE) ((2 <= (VALUE)) && ((VALUE) <= 15))
-#define IS_RCC_PLLSAIR_VALUE(VALUE) ((2 <= (VALUE)) && ((VALUE) <= 7))  
+#define IS_RCC_PLLSAIR_VALUE(VALUE) ((2 <= (VALUE)) && ((VALUE) <= 7))
 
 #define IS_RCC_PLLSAI_DIVQ_VALUE(VALUE) ((1 <= (VALUE)) && ((VALUE) <= 32))
 #define IS_RCC_PLLI2S_DIVQ_VALUE(VALUE) ((1 <= (VALUE)) && ((VALUE) <= 32))
@@ -114,11 +113,11 @@ typedef struct
                                         ((VALUE) == RCC_PLLSAIDivR_Div4)  ||\
                                         ((VALUE) == RCC_PLLSAIDivR_Div8)  ||\
                                         ((VALUE) == RCC_PLLSAIDivR_Div16))
- 
+
 /**
   * @}
-  */ 
-  
+  */
+
 /** @defgroup RCC_System_Clock_Source 
   * @{
   */
@@ -130,8 +129,8 @@ typedef struct
                                       ((SOURCE) == RCC_SYSCLKSource_PLLCLK))
 /**
   * @}
-  */ 
-  
+  */
+
 /** @defgroup RCC_AHB_Clock_Source
   * @{
   */
@@ -151,8 +150,8 @@ typedef struct
                            ((HCLK) == RCC_SYSCLK_Div512))
 /**
   * @}
-  */ 
-  
+  */
+
 /** @defgroup RCC_APB1_APB2_Clock_Source
   * @{
   */
@@ -166,8 +165,8 @@ typedef struct
                            ((PCLK) == RCC_HCLK_Div16))
 /**
   * @}
-  */ 
-  
+  */
+
 /** @defgroup RCC_Interrupt_Source 
   * @{
   */
@@ -176,7 +175,7 @@ typedef struct
 #define RCC_IT_HSIRDY                    ((uint8_t)0x04)
 #define RCC_IT_HSERDY                    ((uint8_t)0x08)
 #define RCC_IT_PLLRDY                    ((uint8_t)0x10)
-#define RCC_IT_PLLI2SRDY                 ((uint8_t)0x20) 
+#define RCC_IT_PLLI2SRDY                 ((uint8_t)0x20)
 #define RCC_IT_PLLSAIRDY                 ((uint8_t)0x40)
 #define RCC_IT_CSS                       ((uint8_t)0x80)
 
@@ -189,8 +188,8 @@ typedef struct
 
 /**
   * @}
-  */ 
-  
+  */
+
 /** @defgroup RCC_LSE_Configuration 
   * @{
   */
@@ -201,8 +200,8 @@ typedef struct
                          ((LSE) == RCC_LSE_Bypass))
 /**
   * @}
-  */ 
-  
+  */
+
 /** @defgroup RCC_RTC_Clock_Source
   * @{
   */
@@ -272,18 +271,18 @@ typedef struct
                                       ((SOURCE) == RCC_RTCCLKSource_HSE_Div31))
 /**
   * @}
-  */ 
-  
+  */
+
 /** @defgroup RCC_I2S_Clock_Source
   * @{
   */
 #define RCC_I2S2CLKSource_PLLI2S             ((uint8_t)0x00)
 #define RCC_I2S2CLKSource_Ext                ((uint8_t)0x01)
 
-#define IS_RCC_I2SCLK_SOURCE(SOURCE) (((SOURCE) == RCC_I2S2CLKSource_PLLI2S) || ((SOURCE) == RCC_I2S2CLKSource_Ext))                                
+#define IS_RCC_I2SCLK_SOURCE(SOURCE) (((SOURCE) == RCC_I2S2CLKSource_PLLI2S) || ((SOURCE) == RCC_I2S2CLKSource_Ext))
 /**
   * @}
-  */ 
+  */
 
 /** @defgroup RCC_SAI_BlockA_Clock_Source
   * @{
@@ -297,7 +296,7 @@ typedef struct
                                        ((SOURCE) == RCC_SAIACLKSource_Ext))
 /**
   * @}
-  */ 
+  */
 
 /** @defgroup RCC_SAI_BlockB_Clock_Source
   * @{
@@ -311,7 +310,7 @@ typedef struct
                                        ((SOURCE) == RCC_SAIBCLKSource_Ext))
 /**
   * @}
-  */ 
+  */
 
 /** @defgroup RCC_TIM_PRescaler_Selection
   * @{
@@ -323,10 +322,10 @@ typedef struct
 /**
   * @}
   */
-  
+
 /** @defgroup RCC_AHB1_Peripherals 
   * @{
-  */ 
+  */
 #define RCC_AHB1Periph_GPIOA             ((uint32_t)0x00000001)
 #define RCC_AHB1Periph_GPIOB             ((uint32_t)0x00000002)
 #define RCC_AHB1Periph_GPIOC             ((uint32_t)0x00000004)
@@ -335,7 +334,7 @@ typedef struct
 #define RCC_AHB1Periph_GPIOF             ((uint32_t)0x00000020)
 #define RCC_AHB1Periph_GPIOG             ((uint32_t)0x00000040)
 #define RCC_AHB1Periph_GPIOH             ((uint32_t)0x00000080)
-#define RCC_AHB1Periph_GPIOI             ((uint32_t)0x00000100) 
+#define RCC_AHB1Periph_GPIOI             ((uint32_t)0x00000100)
 #define RCC_AHB1Periph_GPIOJ             ((uint32_t)0x00000200)
 #define RCC_AHB1Periph_GPIOK             ((uint32_t)0x00000400)
 #define RCC_AHB1Periph_CRC               ((uint32_t)0x00001000)
@@ -361,11 +360,11 @@ typedef struct
 
 /**
   * @}
-  */ 
-  
+  */
+
 /** @defgroup RCC_AHB2_Peripherals 
   * @{
-  */  
+  */
 #define RCC_AHB2Periph_DCMI              ((uint32_t)0x00000001)
 #define RCC_AHB2Periph_CRYP              ((uint32_t)0x00000010)
 #define RCC_AHB2Periph_HASH              ((uint32_t)0x00000020)
@@ -374,27 +373,27 @@ typedef struct
 #define IS_RCC_AHB2_PERIPH(PERIPH) ((((PERIPH) & 0xFFFFFF0E) == 0x00) && ((PERIPH) != 0x00))
 /**
   * @}
-  */ 
-  
+  */
+
 /** @defgroup RCC_AHB3_Peripherals 
   * @{
-  */ 
+  */
 #if defined (STM32F40_41xxx)
 #define RCC_AHB3Periph_FSMC                ((uint32_t)0x00000001)
 #endif /* STM32F40_41xxx */
 
-#if defined (STM32F427_437xx) || defined (STM32F429_439xx) 
+#if defined (STM32F427_437xx) || defined (STM32F429_439xx)
 #define RCC_AHB3Periph_FMC                ((uint32_t)0x00000001)
 #endif /* STM32F427_437xx ||  STM32F429_439xx */
 
 #define IS_RCC_AHB3_PERIPH(PERIPH) ((((PERIPH) & 0xFFFFFFFE) == 0x00) && ((PERIPH) != 0x00))
 /**
   * @}
-  */ 
-  
+  */
+
 /** @defgroup RCC_APB1_Peripherals 
   * @{
-  */ 
+  */
 #define RCC_APB1Periph_TIM2              ((uint32_t)0x00000001)
 #define RCC_APB1Periph_TIM3              ((uint32_t)0x00000002)
 #define RCC_APB1Periph_TIM4              ((uint32_t)0x00000004)
@@ -423,11 +422,11 @@ typedef struct
 #define IS_RCC_APB1_PERIPH(PERIPH) ((((PERIPH) & 0x09013600) == 0x00) && ((PERIPH) != 0x00))
 /**
   * @}
-  */ 
-  
+  */
+
 /** @defgroup RCC_APB2_Peripherals 
   * @{
-  */ 
+  */
 #define RCC_APB2Periph_TIM1              ((uint32_t)0x00000001)
 #define RCC_APB2Periph_TIM8              ((uint32_t)0x00000002)
 #define RCC_APB2Periph_USART1            ((uint32_t)0x00000010)
@@ -453,8 +452,8 @@ typedef struct
 
 /**
   * @}
-  */ 
-  
+  */
+
 /** @defgroup RCC_MCO1_Clock_Source_Prescaler
   * @{
   */
@@ -469,14 +468,14 @@ typedef struct
 #define RCC_MCO1Div_5                    ((uint32_t)0x07000000)
 #define IS_RCC_MCO1SOURCE(SOURCE) (((SOURCE) == RCC_MCO1Source_HSI) || ((SOURCE) == RCC_MCO1Source_LSE) || \
                                    ((SOURCE) == RCC_MCO1Source_HSE) || ((SOURCE) == RCC_MCO1Source_PLLCLK))
-                                   
+
 #define IS_RCC_MCO1DIV(DIV) (((DIV) == RCC_MCO1Div_1) || ((DIV) == RCC_MCO1Div_2) || \
                              ((DIV) == RCC_MCO1Div_3) || ((DIV) == RCC_MCO1Div_4) || \
-                             ((DIV) == RCC_MCO1Div_5)) 
+                             ((DIV) == RCC_MCO1Div_5))
 /**
   * @}
-  */ 
-  
+  */
+
 /** @defgroup RCC_MCO2_Clock_Source_Prescaler
   * @{
   */
@@ -491,14 +490,14 @@ typedef struct
 #define RCC_MCO2Div_5                    ((uint32_t)0x38000000)
 #define IS_RCC_MCO2SOURCE(SOURCE) (((SOURCE) == RCC_MCO2Source_SYSCLK) || ((SOURCE) == RCC_MCO2Source_PLLI2SCLK)|| \
                                    ((SOURCE) == RCC_MCO2Source_HSE) || ((SOURCE) == RCC_MCO2Source_PLLCLK))
-                                   
+
 #define IS_RCC_MCO2DIV(DIV) (((DIV) == RCC_MCO2Div_1) || ((DIV) == RCC_MCO2Div_2) || \
                              ((DIV) == RCC_MCO2Div_3) || ((DIV) == RCC_MCO2Div_4) || \
-                             ((DIV) == RCC_MCO2Div_5))                             
+                             ((DIV) == RCC_MCO2Div_5))
 /**
   * @}
-  */ 
-  
+  */
+
 /** @defgroup RCC_Flag 
   * @{
   */
@@ -528,30 +527,39 @@ typedef struct
 #define IS_RCC_CALIBRATION_VALUE(VALUE) ((VALUE) <= 0x1F)
 /**
   * @}
-  */ 
+  */
 
 /**
   * @}
-  */ 
+  */
 
 /* Exported macro ------------------------------------------------------------*/
-/* Exported functions --------------------------------------------------------*/ 
+/* Exported functions --------------------------------------------------------*/
 
 /* Function used to set the RCC clock configuration to the default reset state */
 void RCC_DeInit(void);
 
 /* Internal/external clocks, PLL, CSS and MCO configuration functions *********/
-void        RCC_HSEConfig(uint8_t RCC_HSE);
+void RCC_HSEConfig(uint8_t RCC_HSE);
+
 ErrorStatus RCC_WaitForHSEStartUp(void);
-void        RCC_AdjustHSICalibrationValue(uint8_t HSICalibrationValue);
-void        RCC_HSICmd(FunctionalState NewState);
-void        RCC_LSEConfig(uint8_t RCC_LSE);
-void        RCC_LSICmd(FunctionalState NewState);
-void        RCC_PLLConfig(uint32_t RCC_PLLSource, uint32_t PLLM, uint32_t PLLN, uint32_t PLLP, uint32_t PLLQ);
-void        RCC_PLLCmd(FunctionalState NewState);
+
+void RCC_AdjustHSICalibrationValue(uint8_t HSICalibrationValue);
+
+void RCC_HSICmd(FunctionalState NewState);
+
+void RCC_LSEConfig(uint8_t RCC_LSE);
+
+void RCC_LSICmd(FunctionalState NewState);
+
+void RCC_PLLConfig(uint32_t RCC_PLLSource, uint32_t PLLM, uint32_t PLLN, uint32_t PLLP, uint32_t PLLQ);
+
+void RCC_PLLCmd(FunctionalState NewState);
 
 #if defined (STM32F40_41xxx) || defined (STM32F401xx)
-void        RCC_PLLI2SConfig(uint32_t PLLI2SN, uint32_t PLLI2SR);
+
+void RCC_PLLI2SConfig(uint32_t PLLI2SN, uint32_t PLLI2SR);
+
 #elif defined (STM32F411xE)
 void        RCC_PLLI2SConfig(uint32_t PLLI2SN, uint32_t PLLI2SR, uint32_t PLLI2SM);
 #elif defined (STM32F427_437xx) || defined (STM32F429_439xx)
@@ -559,59 +567,94 @@ void        RCC_PLLI2SConfig(uint32_t PLLI2SN, uint32_t PLLI2SQ, uint32_t PLLI2S
 #else
 #endif /* STM32F40_41xxx || STM32F401xx */
 
-void        RCC_PLLI2SCmd(FunctionalState NewState);
-void        RCC_PLLSAIConfig(uint32_t PLLSAIN, uint32_t PLLSAIQ, uint32_t PLLSAIR);
-void        RCC_PLLSAICmd(FunctionalState NewState);
-void        RCC_ClockSecuritySystemCmd(FunctionalState NewState);
-void        RCC_MCO1Config(uint32_t RCC_MCO1Source, uint32_t RCC_MCO1Div);
-void        RCC_MCO2Config(uint32_t RCC_MCO2Source, uint32_t RCC_MCO2Div);
+void RCC_PLLI2SCmd(FunctionalState NewState);
+
+void RCC_PLLSAIConfig(uint32_t PLLSAIN, uint32_t PLLSAIQ, uint32_t PLLSAIR);
+
+void RCC_PLLSAICmd(FunctionalState NewState);
+
+void RCC_ClockSecuritySystemCmd(FunctionalState NewState);
+
+void RCC_MCO1Config(uint32_t RCC_MCO1Source, uint32_t RCC_MCO1Div);
+
+void RCC_MCO2Config(uint32_t RCC_MCO2Source, uint32_t RCC_MCO2Div);
 
 /* System, AHB and APB busses clocks configuration functions ******************/
-void        RCC_SYSCLKConfig(uint32_t RCC_SYSCLKSource);
-uint8_t     RCC_GetSYSCLKSource(void);
-void        RCC_HCLKConfig(uint32_t RCC_SYSCLK);
-void        RCC_PCLK1Config(uint32_t RCC_HCLK);
-void        RCC_PCLK2Config(uint32_t RCC_HCLK);
-void        RCC_GetClocksFreq(RCC_ClocksTypeDef* RCC_Clocks);
+void RCC_SYSCLKConfig(uint32_t RCC_SYSCLKSource);
+
+uint8_t RCC_GetSYSCLKSource(void);
+
+void RCC_HCLKConfig(uint32_t RCC_SYSCLK);
+
+void RCC_PCLK1Config(uint32_t RCC_HCLK);
+
+void RCC_PCLK2Config(uint32_t RCC_HCLK);
+
+void RCC_GetClocksFreq(RCC_ClocksTypeDef *RCC_Clocks);
 
 /* Peripheral clocks configuration functions **********************************/
-void        RCC_RTCCLKConfig(uint32_t RCC_RTCCLKSource);
-void        RCC_RTCCLKCmd(FunctionalState NewState);
-void        RCC_BackupResetCmd(FunctionalState NewState);
-void        RCC_I2SCLKConfig(uint32_t RCC_I2SCLKSource); 
-void        RCC_SAIPLLI2SClkDivConfig(uint32_t RCC_PLLI2SDivQ);
-void        RCC_SAIPLLSAIClkDivConfig(uint32_t RCC_PLLSAIDivQ);
-void        RCC_SAIBlockACLKConfig(uint32_t RCC_SAIBlockACLKSource);
-void        RCC_SAIBlockBCLKConfig(uint32_t RCC_SAIBlockBCLKSource);
-void        RCC_LTDCCLKDivConfig(uint32_t RCC_PLLSAIDivR);
-void        RCC_TIMCLKPresConfig(uint32_t RCC_TIMCLKPrescaler);
+void RCC_RTCCLKConfig(uint32_t RCC_RTCCLKSource);
 
-void        RCC_AHB1PeriphClockCmd(uint32_t RCC_AHB1Periph, FunctionalState NewState);
-void        RCC_AHB2PeriphClockCmd(uint32_t RCC_AHB2Periph, FunctionalState NewState);
-void        RCC_AHB3PeriphClockCmd(uint32_t RCC_AHB3Periph, FunctionalState NewState);
-void        RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState);
-void        RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState);
+void RCC_RTCCLKCmd(FunctionalState NewState);
 
-void        RCC_AHB1PeriphResetCmd(uint32_t RCC_AHB1Periph, FunctionalState NewState);
-void        RCC_AHB2PeriphResetCmd(uint32_t RCC_AHB2Periph, FunctionalState NewState);
-void        RCC_AHB3PeriphResetCmd(uint32_t RCC_AHB3Periph, FunctionalState NewState);
-void        RCC_APB1PeriphResetCmd(uint32_t RCC_APB1Periph, FunctionalState NewState);
-void        RCC_APB2PeriphResetCmd(uint32_t RCC_APB2Periph, FunctionalState NewState);
+void RCC_BackupResetCmd(FunctionalState NewState);
 
-void        RCC_AHB1PeriphClockLPModeCmd(uint32_t RCC_AHB1Periph, FunctionalState NewState);
-void        RCC_AHB2PeriphClockLPModeCmd(uint32_t RCC_AHB2Periph, FunctionalState NewState);
-void        RCC_AHB3PeriphClockLPModeCmd(uint32_t RCC_AHB3Periph, FunctionalState NewState);
-void        RCC_APB1PeriphClockLPModeCmd(uint32_t RCC_APB1Periph, FunctionalState NewState);
-void        RCC_APB2PeriphClockLPModeCmd(uint32_t RCC_APB2Periph, FunctionalState NewState);
+void RCC_I2SCLKConfig(uint32_t RCC_I2SCLKSource);
 
-void        RCC_LSEModeConfig(uint8_t Mode);
+void RCC_SAIPLLI2SClkDivConfig(uint32_t RCC_PLLI2SDivQ);
+
+void RCC_SAIPLLSAIClkDivConfig(uint32_t RCC_PLLSAIDivQ);
+
+void RCC_SAIBlockACLKConfig(uint32_t RCC_SAIBlockACLKSource);
+
+void RCC_SAIBlockBCLKConfig(uint32_t RCC_SAIBlockBCLKSource);
+
+void RCC_LTDCCLKDivConfig(uint32_t RCC_PLLSAIDivR);
+
+void RCC_TIMCLKPresConfig(uint32_t RCC_TIMCLKPrescaler);
+
+void RCC_AHB1PeriphClockCmd(uint32_t RCC_AHB1Periph, FunctionalState NewState);
+
+void RCC_AHB2PeriphClockCmd(uint32_t RCC_AHB2Periph, FunctionalState NewState);
+
+void RCC_AHB3PeriphClockCmd(uint32_t RCC_AHB3Periph, FunctionalState NewState);
+
+void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState);
+
+void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState);
+
+void RCC_AHB1PeriphResetCmd(uint32_t RCC_AHB1Periph, FunctionalState NewState);
+
+void RCC_AHB2PeriphResetCmd(uint32_t RCC_AHB2Periph, FunctionalState NewState);
+
+void RCC_AHB3PeriphResetCmd(uint32_t RCC_AHB3Periph, FunctionalState NewState);
+
+void RCC_APB1PeriphResetCmd(uint32_t RCC_APB1Periph, FunctionalState NewState);
+
+void RCC_APB2PeriphResetCmd(uint32_t RCC_APB2Periph, FunctionalState NewState);
+
+void RCC_AHB1PeriphClockLPModeCmd(uint32_t RCC_AHB1Periph, FunctionalState NewState);
+
+void RCC_AHB2PeriphClockLPModeCmd(uint32_t RCC_AHB2Periph, FunctionalState NewState);
+
+void RCC_AHB3PeriphClockLPModeCmd(uint32_t RCC_AHB3Periph, FunctionalState NewState);
+
+void RCC_APB1PeriphClockLPModeCmd(uint32_t RCC_APB1Periph, FunctionalState NewState);
+
+void RCC_APB2PeriphClockLPModeCmd(uint32_t RCC_APB2Periph, FunctionalState NewState);
+
+void RCC_LSEModeConfig(uint8_t Mode);
 
 /* Interrupts and flags management functions **********************************/
-void        RCC_ITConfig(uint8_t RCC_IT, FunctionalState NewState);
-FlagStatus  RCC_GetFlagStatus(uint8_t RCC_FLAG);
-void        RCC_ClearFlag(void);
-ITStatus    RCC_GetITStatus(uint8_t RCC_IT);
-void        RCC_ClearITPendingBit(uint8_t RCC_IT);
+void RCC_ITConfig(uint8_t RCC_IT, FunctionalState NewState);
+
+FlagStatus RCC_GetFlagStatus(uint8_t RCC_FLAG);
+
+void RCC_ClearFlag(void);
+
+ITStatus RCC_GetITStatus(uint8_t RCC_IT);
+
+void RCC_ClearITPendingBit(uint8_t RCC_IT);
 
 #ifdef __cplusplus
 }
@@ -621,10 +664,10 @@ void        RCC_ClearITPendingBit(uint8_t RCC_IT);
 
 /**
   * @}
-  */ 
+  */
 
 /**
   * @}
-  */ 
+  */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

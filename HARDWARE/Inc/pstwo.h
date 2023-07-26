@@ -1,11 +1,12 @@
 #ifndef __PSTWO_H
 #define __PSTWO_H
+
 #include "delay.h"
 #include "sys.h"
 #include "system.h"
-      
-#define PS2_TASK_PRIO		4     //Task priority //任务优先级
-#define PS2_STK_SIZE 		256   //Task stack size //任务堆栈大小
+
+#define PS2_TASK_PRIO        4     //Task priority //任务优先级
+#define PS2_STK_SIZE        256   //Task stack size //任务堆栈大小
 
 
 #define DI   PEin(15)     //Input pin //输入引脚
@@ -50,23 +51,39 @@
 extern u8 Data[9];
 extern u16 MASK[16];
 extern u16 Handkey;
+
 void PS2_Read(void);
+
 void PS2_Init(void);
-u8 PS2_RedLight(void);   
-void PS2_ReadData(void); 
-void PS2_Cmd(u8 CMD);		 
-u8 PS2_DataKey(void);		 
-u8 PS2_AnologData(u8 button); 
-void PS2_ClearData(void);	    
+
+u8 PS2_RedLight(void);
+
+void PS2_ReadData(void);
+
+void PS2_Cmd(u8 CMD);
+
+u8 PS2_DataKey(void);
+
+u8 PS2_AnologData(u8 button);
+
+void PS2_ClearData(void);
+
 void PS2_Vibration(u8 motor1, u8 motor2);
 
-void PS2_EnterConfing(void);	   
-void PS2_TurnOnAnalogMode(void); 
-void PS2_VibrationMode(void);  
-void PS2_ExitConfing(void);	 
-void PS2_SetInit(void);		    
-void PS2_Receive (void);
+void PS2_EnterConfing(void);
+
+void PS2_TurnOnAnalogMode(void);
+
+void PS2_VibrationMode(void);
+
+void PS2_ExitConfing(void);
+
+void PS2_SetInit(void);
+
+void PS2_Receive(void);
+
 void pstwo_task(void *pvParameters);
+
 #endif
 
 

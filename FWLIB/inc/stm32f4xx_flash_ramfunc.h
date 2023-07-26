@@ -31,7 +31,7 @@
 #define __STM32F4xx_FLASH_RAMFUNC_H
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -43,13 +43,13 @@
 
 /** @addtogroup FLASH RAMFUNC
   * @{
-  */ 
+  */
 
 /* Exported types ------------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /** 
   * @brief  __RAM_FUNC definition
-  */ 
+  */
 #if defined ( __CC_ARM   )
 /* ARM Compiler
    ------------
@@ -82,6 +82,7 @@
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions --------------------------------------------------------*/
 __RAM_FUNC FLASH_FlashInterfaceCmd(FunctionalState NewState);
+
 __RAM_FUNC FLASH_FlashSleepModeCmd(FunctionalState NewState);
 
 
@@ -93,11 +94,11 @@ __RAM_FUNC FLASH_FlashSleepModeCmd(FunctionalState NewState);
 
 /**
   * @}
-  */ 
+  */
 
 /**
   * @}
-  */ 
+  */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
 

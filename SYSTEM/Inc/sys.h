@@ -1,19 +1,20 @@
 #ifndef __SYS_H
-#define __SYS_H	 
-#include "stm32f4xx.h" 
+#define __SYS_H
+
+#include "stm32f4xx.h"
 
 
 //0,不支持os
 //1,支持os
-#define SYSTEM_SUPPORT_OS		1		//定义系统文件夹是否支持OS
-																	    
-	 
+#define SYSTEM_SUPPORT_OS        1        //定义系统文件夹是否支持OS
+
+
 //位带操作,实现51类似的GPIO控制功能
 //具体实现思想,参考<<CM3权威指南>>第五章(87页~92页).M4同M3类似,只是寄存器地址变了.
 //IO口操作宏定义
-#define BITBAND(addr, bitnum) ((addr & 0xF0000000)+0x2000000+((addr &0xFFFFF)<<5)+(bitnum<<2)) 
-#define MEM_ADDR(addr)  *((volatile unsigned long  *)(addr)) 
-#define BIT_ADDR(addr, bitnum)   MEM_ADDR(BITBAND(addr, bitnum)) 
+#define BITBAND(addr, bitnum) ((addr & 0xF0000000)+0x2000000+((addr &0xFFFFF)<<5)+(bitnum<<2))
+#define MEM_ADDR(addr)  *((volatile unsigned long  *)(addr))
+#define BIT_ADDR(addr, bitnum)   MEM_ADDR(BITBAND(addr, bitnum))
 //IO口地址映射
 #define GPIOA_ODR_Addr    (GPIOA_BASE+20) //0x40020014
 #define GPIOB_ODR_Addr    (GPIOB_BASE+20) //0x40020414 
@@ -34,7 +35,7 @@
 #define GPIOG_IDR_Addr    (GPIOG_BASE+16) //0x40021810 
 #define GPIOH_IDR_Addr    (GPIOH_BASE+16) //0x40021C10 
 #define GPIOI_IDR_Addr    (GPIOI_BASE+16) //0x40022010 
- 
+
 //IO口操作,只对单一的IO口!
 //确保n的值小于16!
 #define PAout(n)   BIT_ADDR(GPIOA_ODR_Addr,n)  //输出 
@@ -65,10 +66,10 @@
 #define PIin(n)    BIT_ADDR(GPIOI_IDR_Addr,n)  //输入
 
 //以下为汇编函数
-void WFI_SET(void);		//执行WFI指令
+void WFI_SET(void);        //执行WFI指令
 void INTX_DISABLE(void);//关闭所有中断
-void INTX_ENABLE(void);	//开启所有中断
-void MSR_MSP(u32 addr);	//设置堆栈地址 
+void INTX_ENABLE(void);    //开启所有中断
+void MSR_MSP(u32 addr);    //设置堆栈地址
 #endif
 
 

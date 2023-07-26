@@ -77,6 +77,7 @@
 #endif /* STM32F427_437xx */
 
 #if defined (STM32F40_41xxx)
+
 #include "stm32f4xx_cryp.h"
 #include "stm32f4xx_hash.h"
 #include "stm32f4xx_rng.h"
@@ -84,6 +85,7 @@
 #include "stm32f4xx_dac.h"
 #include "stm32f4xx_dcmi.h"
 #include "stm32f4xx_fsmc.h"
+
 #endif /* STM32F40_41xxx */
 
 #if defined (STM32F411xE)
@@ -113,11 +115,11 @@
   *   If expr is true, it returns no value.
   * @retval None
   */
-  #define assert_param(expr) ((expr) ? (void)0 : assert_failed((uint8_t *)__FILE__, __LINE__))
+#define assert_param(expr) ((expr) ? (void)0 : assert_failed((uint8_t *)__FILE__, __LINE__))
 /* Exported functions ------------------------------------------------------- */
   void assert_failed(uint8_t* file, uint32_t line);
 #else
-  #define assert_param(expr) ((void)0)
+#define assert_param(expr) ((void)0)
 #endif /* USE_FULL_ASSERT */
 
 #endif /* __STM32F4xx_CONF_H */

@@ -2,6 +2,7 @@
 #define __MPU6050_H
 
 #include "sys.h"
+
 #define devAddr  0xD0
 
 #define MPU6050_ADDRESS_AD0_LOW     0x68 // address pin low (GND), default for InvenSense evaluation board
@@ -354,32 +355,42 @@
 #define MPU6050_WHO_AM_I_BIT        6
 #define MPU6050_WHO_AM_I_LENGTH     6
 
-#define MPU6050_TASK_PRIO		3    
-#define MPU6050_STK_SIZE 		256  
+#define MPU6050_TASK_PRIO        3
+#define MPU6050_STK_SIZE        256
 
-extern	short gyro[3], accel[3];
+extern short gyro[3], accel[3];
 extern int Deviation_Count;
-extern short Deviation_gyro[3],Original_gyro[3]; 
-extern  short Deviation_accel[3],Original_accel[3]; 
-extern int16_t Gx_offset,Gy_offset,Gz_offset;
+extern short Deviation_gyro[3], Original_gyro[3];
+extern short Deviation_accel[3], Original_accel[3];
+extern int16_t Gx_offset, Gy_offset, Gz_offset;
 extern float Acc1G_Values;
-extern float Roll,Pitch,Yaw; 
+extern float Roll, Pitch, Yaw;
+
 //供外部调用的API
 u8 MPU6050_initialize(void); //初始化
 uint8_t MPU6050_testConnection(void); //检测MPU6050是否存在
 //读取ADC值
-void MPU6050_getMotion6(int16_t* ax, int16_t* ay, int16_t* az, int16_t* gx, int16_t* gy, int16_t* gz);
-void MPU6050_getlastMotion6(int16_t* ax, int16_t* ay, 
-		int16_t* az, int16_t* gx, int16_t* gy, int16_t* gz);
+void MPU6050_getMotion6(int16_t *ax, int16_t *ay, int16_t *az, int16_t *gx, int16_t *gy, int16_t *gz);
+
+void MPU6050_getlastMotion6(int16_t *ax, int16_t *ay,
+                            int16_t *az, int16_t *gx, int16_t *gy, int16_t *gz);
+
 uint8_t MPU6050_getDeviceID(void); //读取MPU6050的ID
 void MPU6050_InitGyro_Offset(void);//初始化陀螺仪偏置
 void DMP_Init(void);
+
 void Read_DMP(void);
+
 int Read_Temperature(void);
+
 void MPU6050_task(void *pvParameters);
+
 unsigned char MPU6050_Set_LPF(u16 lpf);
+
 unsigned char MPU6050_Set_Rate(u16 rate);
+
 void MPU_Get_Gyroscope(void);
+
 void MPU_Get_Accelscope(void);
 
 #endif

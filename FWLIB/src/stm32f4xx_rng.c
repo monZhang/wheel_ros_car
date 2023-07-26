@@ -63,7 +63,7 @@
 /** @defgroup RNG 
   * @brief RNG driver modules
   * @{
-  */ 
+  */
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -74,7 +74,7 @@
 
 /** @defgroup RNG_Private_Functions
   * @{
-  */ 
+  */
 
 /** @defgroup RNG_Group1 Initialization and Configuration functions
  *  @brief    Initialization and Configuration functions 
@@ -96,13 +96,12 @@
   * @param  None
   * @retval None
   */
-void RNG_DeInit(void)
-{
-  /* Enable RNG reset state */
-  RCC_AHB2PeriphResetCmd(RCC_AHB2Periph_RNG, ENABLE);
+void RNG_DeInit(void) {
+    /* Enable RNG reset state */
+    RCC_AHB2PeriphResetCmd(RCC_AHB2Periph_RNG, ENABLE);
 
-  /* Release RNG from reset state */
-  RCC_AHB2PeriphResetCmd(RCC_AHB2Periph_RNG, DISABLE);
+    /* Release RNG from reset state */
+    RCC_AHB2PeriphResetCmd(RCC_AHB2Periph_RNG, DISABLE);
 }
 
 /**
@@ -111,21 +110,17 @@ void RNG_DeInit(void)
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void RNG_Cmd(FunctionalState NewState)
-{
-  /* Check the parameters */
-  assert_param(IS_FUNCTIONAL_STATE(NewState));
+void RNG_Cmd(FunctionalState NewState) {
+    /* Check the parameters */
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-  if (NewState != DISABLE)
-  {
-    /* Enable the RNG */
-    RNG->CR |= RNG_CR_RNGEN;
-  }
-  else
-  {
-    /* Disable the RNG */
-    RNG->CR &= ~RNG_CR_RNGEN;
-  }
+    if (NewState != DISABLE) {
+        /* Enable the RNG */
+        RNG->CR |= RNG_CR_RNGEN;
+    } else {
+        /* Disable the RNG */
+        RNG->CR &= ~RNG_CR_RNGEN;
+    }
 }
 /**
   * @}
@@ -173,10 +168,9 @@ void RNG_Cmd(FunctionalState NewState)
   * @param  None
   * @retval 32-bit random number.
   */
-uint32_t RNG_GetRandomNumber(void)
-{
-  /* Return the 32 bit random number from the DR register */
-  return RNG->DR;
+uint32_t RNG_GetRandomNumber(void) {
+    /* Return the 32 bit random number from the DR register */
+    return RNG->DR;
 }
 
 
@@ -248,7 +242,7 @@ uint32_t RNG_GetRandomNumber(void)
   
 @endverbatim
   * @{
-  */ 
+  */
 
 /**
   * @brief  Enables or disables the RNG interrupt.
@@ -264,21 +258,17 @@ uint32_t RNG_GetRandomNumber(void)
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
-void RNG_ITConfig(FunctionalState NewState)
-{
-  /* Check the parameters */
-  assert_param(IS_FUNCTIONAL_STATE(NewState));
+void RNG_ITConfig(FunctionalState NewState) {
+    /* Check the parameters */
+    assert_param(IS_FUNCTIONAL_STATE(NewState));
 
-  if (NewState != DISABLE)
-  {
-    /* Enable the RNG interrupt */
-    RNG->CR |= RNG_CR_IE;
-  }
-  else
-  {
-    /* Disable the RNG interrupt */
-    RNG->CR &= ~RNG_CR_IE;
-  }
+    if (NewState != DISABLE) {
+        /* Enable the RNG interrupt */
+        RNG->CR |= RNG_CR_IE;
+    } else {
+        /* Disable the RNG interrupt */
+        RNG->CR &= ~RNG_CR_IE;
+    }
 }
 
 /**
@@ -290,25 +280,21 @@ void RNG_ITConfig(FunctionalState NewState)
   *            @arg RNG_FLAG_SECS: Seed Error Current flag.
   * @retval The new state of RNG_FLAG (SET or RESET).
   */
-FlagStatus RNG_GetFlagStatus(uint8_t RNG_FLAG)
-{
-  FlagStatus bitstatus = RESET;
-  /* Check the parameters */
-  assert_param(IS_RNG_GET_FLAG(RNG_FLAG));
+FlagStatus RNG_GetFlagStatus(uint8_t RNG_FLAG) {
+    FlagStatus bitstatus = RESET;
+    /* Check the parameters */
+    assert_param(IS_RNG_GET_FLAG(RNG_FLAG));
 
-  /* Check the status of the specified RNG flag */
-  if ((RNG->SR & RNG_FLAG) != (uint8_t)RESET)
-  {
-    /* RNG_FLAG is set */
-    bitstatus = SET;
-  }
-  else
-  {
-    /* RNG_FLAG is reset */
-    bitstatus = RESET;
-  }
-  /* Return the RNG_FLAG status */
-  return  bitstatus;
+    /* Check the status of the specified RNG flag */
+    if ((RNG->SR & RNG_FLAG) != (uint8_t) RESET) {
+        /* RNG_FLAG is set */
+        bitstatus = SET;
+    } else {
+        /* RNG_FLAG is reset */
+        bitstatus = RESET;
+    }
+    /* Return the RNG_FLAG status */
+    return bitstatus;
 }
 
 
@@ -323,12 +309,11 @@ FlagStatus RNG_GetFlagStatus(uint8_t RNG_FLAG)
   *         RNG_GetRandomNumber() function).                           
   * @retval None
   */
-void RNG_ClearFlag(uint8_t RNG_FLAG)
-{
-  /* Check the parameters */
-  assert_param(IS_RNG_CLEAR_FLAG(RNG_FLAG));
-  /* Clear the selected RNG flags */
-  RNG->SR = ~(uint32_t)(((uint32_t)RNG_FLAG) << 4);
+void RNG_ClearFlag(uint8_t RNG_FLAG) {
+    /* Check the parameters */
+    assert_param(IS_RNG_CLEAR_FLAG(RNG_FLAG));
+    /* Clear the selected RNG flags */
+    RNG->SR = ~(uint32_t) (((uint32_t) RNG_FLAG) << 4);
 }
 
 /**
@@ -339,25 +324,21 @@ void RNG_ClearFlag(uint8_t RNG_FLAG)
   *            @arg RNG_IT_SEI: Seed Error Interrupt.                   
   * @retval The new state of RNG_IT (SET or RESET).
   */
-ITStatus RNG_GetITStatus(uint8_t RNG_IT)
-{
-  ITStatus bitstatus = RESET;
-  /* Check the parameters */
-  assert_param(IS_RNG_GET_IT(RNG_IT));
+ITStatus RNG_GetITStatus(uint8_t RNG_IT) {
+    ITStatus bitstatus = RESET;
+    /* Check the parameters */
+    assert_param(IS_RNG_GET_IT(RNG_IT));
 
-  /* Check the status of the specified RNG interrupt */
-  if ((RNG->SR & RNG_IT) != (uint8_t)RESET)
-  {
-    /* RNG_IT is set */
-    bitstatus = SET;
-  }
-  else
-  {
-    /* RNG_IT is reset */
-    bitstatus = RESET;
-  }
-  /* Return the RNG_IT status */
-  return bitstatus;
+    /* Check the status of the specified RNG interrupt */
+    if ((RNG->SR & RNG_IT) != (uint8_t) RESET) {
+        /* RNG_IT is set */
+        bitstatus = SET;
+    } else {
+        /* RNG_IT is reset */
+        bitstatus = RESET;
+    }
+    /* Return the RNG_IT status */
+    return bitstatus;
 }
 
 
@@ -369,29 +350,28 @@ ITStatus RNG_GetITStatus(uint8_t RNG_IT)
   *            @arg RNG_IT_SEI: Seed Error Interrupt.
   * @retval None
   */
-void RNG_ClearITPendingBit(uint8_t RNG_IT)
-{
-  /* Check the parameters */
-  assert_param(IS_RNG_IT(RNG_IT));
+void RNG_ClearITPendingBit(uint8_t RNG_IT) {
+    /* Check the parameters */
+    assert_param(IS_RNG_IT(RNG_IT));
 
-  /* Clear the selected RNG interrupt pending bit */
-  RNG->SR = (uint8_t)~RNG_IT;
+    /* Clear the selected RNG interrupt pending bit */
+    RNG->SR = (uint8_t) ~RNG_IT;
 }
 /**
   * @}
-  */ 
-  
-/**
-  * @}
-  */ 
+  */
 
 /**
   * @}
-  */ 
+  */
 
 /**
   * @}
-  */ 
+  */
+
+/**
+  * @}
+  */
 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -43,7 +43,7 @@ void start_task(void *pvParameters) {
     xTaskCreate(data_task, "DATA_task", DATA_STK_SIZE, NULL, DATA_TASK_PRIO,
                 NULL);    //Usartx3, Usartx1 and CAN send data task //串口3、串口1、CAN发送数据任务
 
-    vTaskDelete(StartTask_Handler); //Delete the start task //删除开始任务
+    vTaskDelete(StartTask_Handler); //Delete the start task //删除本创建任务的任务
 
     taskEXIT_CRITICAL();            //Exit the critical section//退出临界区
 }
