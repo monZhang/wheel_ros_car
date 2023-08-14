@@ -1,9 +1,6 @@
 #include "encoder.h"
 
 /**************************************************************************
-Function: Initialize TIM2 as the encoder interface mode
-Input   : none
-Output  : none
 函数功能：把TIM2初始化为编码器接口模式
 入口参数：无
 返 回 值：无
@@ -152,17 +149,17 @@ void Encoder_Init_TIM5(void) {
     TIM_ICInitTypeDef TIM_ICInitStructure;
     GPIO_InitTypeDef GPIO_InitStructure;
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5, ENABLE);//使能定时器4的时钟
-    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);//使能PB端口时钟
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);//使能PA端口时钟
 
-    GPIO_PinAFConfig(GPIOA, GPIO_PinSource0, GPIO_AF_TIM5); //复用为TIM4 编码器接口
-    GPIO_PinAFConfig(GPIOA, GPIO_PinSource1, GPIO_AF_TIM5); //复用为TIM4 编码器接口
+    GPIO_PinAFConfig(GPIOA, GPIO_PinSource0, GPIO_AF_TIM5); //复用为TIM5 编码器接口
+    GPIO_PinAFConfig(GPIOA, GPIO_PinSource1, GPIO_AF_TIM5); //复用为TIM5 编码器接口
 
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1;//端口配置
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
     GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
     GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
-    GPIO_Init(GPIOA, &GPIO_InitStructure);   //根据设定参数初始化GPIOB
+    GPIO_Init(GPIOA, &GPIO_InitStructure);   //根据设定参数初始化GPIOA
 
     TIM_TimeBaseStructInit(&TIM_TimeBaseStructure);
 

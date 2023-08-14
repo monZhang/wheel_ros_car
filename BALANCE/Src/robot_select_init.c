@@ -13,14 +13,14 @@ Output  : none
 返回  值：无
 **************************************************************************/
 void Robot_Select(void) {
-    //The ADC value is variable in segments, depending on the number of car models. Currently there are 6 car models, CAR_NUMBER=6
     //ADC值分段变量，取决于小车型号数量，目前有6种小车型号，CAR_NUMBER=6
     Divisor_Mode = 2048 / CAR_NUMBER + 5;
     Car_Mode = (int) ((Get_adc_Average(Potentiometer, 10)) /
                       Divisor_Mode); //Collect the pin information of potentiometer //采集电位器引脚信息
     if (Car_Mode > 5)Car_Mode = 5;
 
-    //Car_Mode=0;
+    //写死 阿克曼类型
+    Car_Mode=2;
 
     switch (Car_Mode) {
         case Mec_Car:

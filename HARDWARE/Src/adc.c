@@ -20,7 +20,7 @@ void Adc_Init(void) {
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE); //使能ADC1时钟
 
 
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;//PB0 通道8
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;//PB0 通道8
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;//模拟输入
     GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;//不带上下拉
     GPIO_Init(GPIOB, &GPIO_InitStructure);//初始化
@@ -154,7 +154,6 @@ float Get_battery_volt(void) {
     Volt = Get_Adc2(Battery_Ch) * 3.3 * 11.0 * Revise / 1.0 / 4096;
     return Volt;
 }
-
 
 
 

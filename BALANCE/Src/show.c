@@ -72,7 +72,8 @@ void oled_show(void) {
     Divisor_Mode = 2048 / CAR_NUMBER + 5;
     Car_Mode_Show = (int) ((Get_adc_Average(Potentiometer, 10)) / Divisor_Mode);
     if (Car_Mode_Show > 5)Car_Mode_Show = 5;
-    //Car_Mode_Show=0;
+
+    Car_Mode_Show = 2;
 
     Voltage_Show = Voltage * 100;
     count++;
@@ -83,22 +84,22 @@ void oled_show(void) {
         //显示屏第1行显示内容//
         switch (Car_Mode_Show) {
             case Mec_Car:
-                OLED_ShowString(0, 0, "Mec ");
+                OLED_ShowString(1, 1, "Mec ");
                 break;
             case Omni_Car:
-                OLED_ShowString(0, 0, "Omni");
+                OLED_ShowString(1, 1, "Omni");
                 break;
             case Akm_Car:
-                OLED_ShowString(0, 0, "Akm ");
+               // OLED_ShowString(1, 1, "Akm ");
                 break;
             case Diff_Car:
-                OLED_ShowString(0, 0, "Diff");
+                OLED_ShowString(1, 1, "Diff");
                 break;
             case FourWheel_Car:
-                OLED_ShowString(0, 0, "4WD ");
+                OLED_ShowString(1, 1, "4WD ");
                 break;
             case Tank_Car:
-                OLED_ShowString(0, 0, "Tank");
+                OLED_ShowString(1, 1, "Tank");
                 break;
         }
 
@@ -106,16 +107,19 @@ void oled_show(void) {
             //The Mec_car and omni_car show Z-axis angular velocity
             //麦轮、全向轮小车显示Z轴角速度
             OLED_ShowString(55, 0, "GZ");
-            if (gyro[2] < 0) OLED_ShowString(80, 0, "-"), OLED_ShowNumber(90, 0, -gyro[2], 5, 12);
-            else OLED_ShowString(80, 0, "+"), OLED_ShowNumber(90, 0, gyro[2], 5, 12);
+            if (gyro[2] < 0) OLED_ShowString(80, 0, "-"), OLED_ShowNumber(90, 0, -gyro[2], 5);
+            else OLED_ShowString(80, 0, "+"), OLED_ShowNumber(90, 0, gyro[2], 5);
         } else if (Car_Mode == Akm_Car || Car_Mode == Diff_Car || Car_Mode == FourWheel_Car || Car_Mode == Tank_Car) {
             //Akm_Car, Diff_Car, FourWheel_Car and Tank_Car Displays gyroscope zero
             //阿克曼、差速、四驱、履带车显示陀螺仪零点
-            OLED_ShowString(55, 0, "BIAS");
-            if (Deviation_gyro[2] < 0)
-                OLED_ShowString(90, 0, "-"), OLED_ShowNumber(100, 0, -Deviation_gyro[2], 3,
-                                                             12);  //Zero-drift data of gyroscope Z axis
-            else OLED_ShowString(90, 0, "+"), OLED_ShowNumber(100, 0, Deviation_gyro[2], 3, 12);    //陀螺仪z轴零点漂移数据
+            OLED_ShowString(1, 7, "BIAS");
+            if (Deviation_gyro[2] < 0) {
+                OLED_ShowString(1, 11, "-");
+                OLED_ShowNumber(1, 12, -Deviation_gyro[2], 3);  //Zero-drift data of gyroscope Z axis
+            } else {
+                OLED_ShowString(1, 11, "+");
+                OLED_ShowNumber(1, 12, Deviation_gyro[2], 3);    //陀螺仪z轴零点漂移数据
+            }
         }
         //The first line of the display displays the content//
         //显示屏第1行显示内容//
@@ -129,27 +133,28 @@ void oled_show(void) {
             OLED_ShowString(0, 10, "A");
             if (MOTOR_A.Target < 0)
                 OLED_ShowString(15, 10, "-"),
-                        OLED_ShowNumber(20, 10, -MOTOR_A.Target * 1000, 5, 12);
+                        OLED_ShowNumber(20, 10, -MOTOR_A.Target * 1000, 5);
             else
                 OLED_ShowString(15, 10, "+"),
-                        OLED_ShowNumber(20, 10, MOTOR_A.Target * 1000, 5, 12);
+                        OLED_ShowNumber(20, 10, MOTOR_A.Target * 1000, 5);
 
             if (MOTOR_A.Encoder < 0)
                 OLED_ShowString(60, 10, "-"),
-                        OLED_ShowNumber(75, 10, -MOTOR_A.Encoder * 1000, 5, 12);
+                        OLED_ShowNumber(75, 10, -MOTOR_A.Encoder * 1000, 5);
             else
                 OLED_ShowString(60, 10, "+"),
-                        OLED_ShowNumber(75, 10, MOTOR_A.Encoder * 1000, 5, 12);
+                        OLED_ShowNumber(75, 10, MOTOR_A.Encoder * 1000, 5);
         } else if (Car_Mode == Akm_Car || Car_Mode == Diff_Car || Car_Mode == Tank_Car) {
             //The Akm_Car, Diff_Car and Tank_Car show Z-axis angular velocity
             //阿克曼、差速、坦克小车显示Z轴角速度
-            OLED_ShowString(00, 10, "GYRO_Z:");
-            if (gyro[2] < 0)
-                OLED_ShowString(60, 10, "-"),
-                        OLED_ShowNumber(75, 10, -gyro[2], 5, 12);
-            else
-                OLED_ShowString(60, 10, "+"),
-                        OLED_ShowNumber(75, 10, gyro[2], 5, 12);
+            OLED_ShowString(2, 1, "GYRO_Z:");
+            if (gyro[2] < 0) {
+                OLED_ShowString(2, 9, "-");
+                OLED_ShowNumber(2, 10, -gyro[2], 5);
+            } else {
+                OLED_ShowString(2, 9, "+");
+                OLED_ShowNumber(2, 10, gyro[2], 5);
+            }
         }
         //The second line of the display displays the content//
         //显示屏第2行显示内容//
@@ -162,71 +167,73 @@ void oled_show(void) {
             OLED_ShowString(0, 20, "B");
             if (MOTOR_B.Target < 0)
                 OLED_ShowString(15, 20, "-"),
-                        OLED_ShowNumber(20, 20, -MOTOR_B.Target * 1000, 5, 12);
+                        OLED_ShowNumber(20, 20, -MOTOR_B.Target * 1000, 5);
             else
                 OLED_ShowString(15, 20, "+"),
-                        OLED_ShowNumber(20, 20, MOTOR_B.Target * 1000, 5, 12);
+                        OLED_ShowNumber(20, 20, MOTOR_B.Target * 1000, 5);
 
             if (MOTOR_B.Encoder < 0)
                 OLED_ShowString(60, 20, "-"),
-                        OLED_ShowNumber(75, 20, -MOTOR_B.Encoder * 1000, 5, 12);
+                        OLED_ShowNumber(75, 20, -MOTOR_B.Encoder * 1000, 5);
             else
                 OLED_ShowString(60, 20, "+"),
-                        OLED_ShowNumber(75, 20, MOTOR_B.Encoder * 1000, 5, 12);
+                        OLED_ShowNumber(75, 20, MOTOR_B.Encoder * 1000, 5);
 
             //Mec_Car, Omni_Car and FourWheel_Car Display the target speed and current actual speed of motor C
             //麦轮、全向轮、四驱车显示电机C的目标速度和当前实际速度
             OLED_ShowString(0, 30, "C");
             if (MOTOR_C.Target < 0)
                 OLED_ShowString(15, 30, "-"),
-                        OLED_ShowNumber(20, 30, -MOTOR_C.Target * 1000, 5, 12);
+                        OLED_ShowNumber(20, 30, -MOTOR_C.Target * 1000, 5);
             else
                 OLED_ShowString(15, 30, "+"),
-                        OLED_ShowNumber(20, 30, MOTOR_C.Target * 1000, 5, 12);
+                        OLED_ShowNumber(20, 30, MOTOR_C.Target * 1000, 5);
 
             if (MOTOR_C.Encoder < 0)
                 OLED_ShowString(60, 30, "-"),
-                        OLED_ShowNumber(75, 30, -MOTOR_C.Encoder * 1000, 5, 12);
+                        OLED_ShowNumber(75, 30, -MOTOR_C.Encoder * 1000, 5);
             else
                 OLED_ShowString(60, 30, "+"),
-                        OLED_ShowNumber(75, 30, MOTOR_C.Encoder * 1000, 5, 12);
+                        OLED_ShowNumber(75, 30, MOTOR_C.Encoder * 1000, 5);
         } else if (Car_Mode == Akm_Car || Car_Mode == Diff_Car || Car_Mode == Tank_Car) {
             //Akm_Car, Diff_Car and Tank_Car Display the target speed and current actual speed of motor A
             //阿克曼、差速、履带车显示电机A的目标速度和当前实际速度
-            OLED_ShowString(0, 20, "L:");
-            if (MOTOR_A.Target < 0)
-                OLED_ShowString(15, 20, "-"),
-                        OLED_ShowNumber(20, 20, -MOTOR_A.Target * 1000, 5, 12);
-            else
-                OLED_ShowString(15, 20, "+"),
-                        OLED_ShowNumber(20, 20, MOTOR_A.Target * 1000, 5, 12);
-            if (MOTOR_A.Encoder < 0)
-                OLED_ShowString(60, 20, "-"),
-                        OLED_ShowNumber(75, 20, -MOTOR_A.Encoder * 1000, 5, 12);
-            else
-                OLED_ShowString(60, 20, "+"),
-                        OLED_ShowNumber(75, 20, MOTOR_A.Encoder * 1000, 5, 12);
+            OLED_ShowString(3, 1, "L:");
+            if (MOTOR_A.Target < 0) {
+                OLED_ShowString(3, 2, "-");
+                OLED_ShowNumber(3, 3, -MOTOR_A.Target * 1000, 5);
+            } else {
+                OLED_ShowString(3, 2, "+");
+                OLED_ShowNumber(3, 3, MOTOR_A.Target * 1000, 5);
+            }
+            if (MOTOR_A.Encoder < 0) {
+                OLED_ShowString(3, 9, "-");
+                OLED_ShowNumber(3, 10, -MOTOR_A.Encoder * 1000, 5);
+            } else {
+                OLED_ShowString(3, 9, "+");
+                OLED_ShowNumber(3, 10, MOTOR_A.Encoder * 1000, 5);
+            }
             //Akm_Car, Diff_Car and Tank_Car Display the target speed and current actual speed of motor B
             //阿克曼、差速、履带车显示电机B的目标速度和当前实际速度
-            OLED_ShowString(0, 30, "R:");
-            if (MOTOR_B.Target < 0)
-                OLED_ShowString(15, 30, "-"),
-                        OLED_ShowNumber(20, 30, -MOTOR_B.Target * 1000, 5, 12);
-            else
-                OLED_ShowString(15, 30, "+"),
-                        OLED_ShowNumber(20, 30, MOTOR_B.Target * 1000, 5, 12);
-
-            if (MOTOR_B.Encoder < 0)
-                OLED_ShowString(60, 30, "-"),
-                        OLED_ShowNumber(75, 30, -MOTOR_B.Encoder * 1000, 5, 12);
-            else
-                OLED_ShowString(60, 30, "+"),
-                        OLED_ShowNumber(75, 30, MOTOR_B.Encoder * 1000, 5, 12);
-
+            OLED_ShowString(4, 1, "R:");
+            if (MOTOR_B.Target < 0) {
+                OLED_ShowString(4, 2, "-");
+                OLED_ShowNumber(4, 3, -MOTOR_B.Target * 1000, 5);
+            } else {
+                OLED_ShowString(4, 2, "+");
+                OLED_ShowNumber(4, 3, MOTOR_B.Target * 1000, 5);
+            }
+            if (MOTOR_B.Encoder < 0) {
+                OLED_ShowString(4, 9, "-");
+                OLED_ShowNumber(4, 10, -MOTOR_B.Encoder * 1000, 5);
+            } else {
+                OLED_ShowString(4, 9, "+");
+                OLED_ShowNumber(4, 10, MOTOR_B.Encoder * 1000, 5);
+            }
 //			 if( Remoter_Ch1<0)	    OLED_ShowString(15,20,"-"),
 //															OLED_ShowNumber(20,20,-Remoter_Ch1,5,12);
 //			 else                 	OLED_ShowString(15,20,"+"),
-//															OLED_ShowNumber(20,20, Remoter_Ch1,5,12);  
+//															OLED_ShowNumber(20,20, Remoter_Ch1,5,12);
 //			 if( Remoter_Ch2<0)	    OLED_ShowString(60,20,"-"),
 //															OLED_ShowNumber(75,20,-Remoter_Ch2,5,12);
 //			 else                 	OLED_ShowString(60,20,"+"),
@@ -234,7 +241,7 @@ void oled_show(void) {
 //			 if( Remoter_Ch3<0)	    OLED_ShowString(15,30,"-"),
 //															OLED_ShowNumber(20,30,-Remoter_Ch3,5,12);
 //			 else                 	OLED_ShowString(15,30,"+"),
-//															OLED_ShowNumber(20,30, Remoter_Ch3,5,12);  
+//															OLED_ShowNumber(20,30, Remoter_Ch3,5,12);
 //			 if( Remoter_Ch4<0)	    OLED_ShowString(60,30,"-"),
 //															OLED_ShowNumber(75,30,-Remoter_Ch4,5,12);
 //			 else                 	OLED_ShowString(60,30,"+"),
@@ -251,78 +258,79 @@ void oled_show(void) {
             OLED_ShowString(0, 40, "D");
             if (MOTOR_D.Target < 0)
                 OLED_ShowString(15, 40, "-"),
-                        OLED_ShowNumber(20, 40, -MOTOR_D.Target * 1000, 5, 12);
+                        OLED_ShowNumber(20, 40, -MOTOR_D.Target * 1000, 5);
             else
                 OLED_ShowString(15, 40, "+"),
-                        OLED_ShowNumber(20, 40, MOTOR_D.Target * 1000, 5, 12);
+                        OLED_ShowNumber(20, 40, MOTOR_D.Target * 1000, 5);
             if (MOTOR_D.Encoder < 0)
                 OLED_ShowString(60, 40, "-"),
-                        OLED_ShowNumber(75, 40, -MOTOR_D.Encoder * 1000, 5, 12);
+                        OLED_ShowNumber(75, 40, -MOTOR_D.Encoder * 1000, 5);
             else
                 OLED_ShowString(60, 40, "+"),
-                        OLED_ShowNumber(75, 40, MOTOR_D.Encoder * 1000, 5, 12);
+                        OLED_ShowNumber(75, 40, MOTOR_D.Encoder * 1000, 5);
         } else if (Car_Mode == Omni_Car) {
             // The Omni_car shows Z-axis angular velocity (1000 times magnification) in rad/s
             //全向轮小车显示Z轴角速度(放大1000倍)，单位rad/s
             OLED_ShowString(0, 40, "MOVE_Z");
             if (Send_Data.Sensor_Str.X_speed < 0)
                 OLED_ShowString(60, 40, "-"),
-                        OLED_ShowNumber(75, 40, -Send_Data.Sensor_Str.X_speed, 5, 12);
+                        OLED_ShowNumber(75, 40, -Send_Data.Sensor_Str.X_speed, 5);
             else
                 OLED_ShowString(60, 40, "+"),
-                        OLED_ShowNumber(75, 40, Send_Data.Sensor_Str.X_speed, 5, 12);
+                        OLED_ShowNumber(75, 40, Send_Data.Sensor_Str.X_speed, 5);
         } else if (Car_Mode == Akm_Car) {
             //Akm_Car displays the PWM value of the Servo
             //阿克曼小车显示舵机的PWM的数值
-            OLED_ShowString(00, 40, "SERVO:");
-            if (Servo < 0)
-                OLED_ShowString(60, 40, "-"),
-                        OLED_ShowNumber(80, 40, -Servo, 4, 12);
-            else
-                OLED_ShowString(60, 40, "+"),
-                        OLED_ShowNumber(80, 40, Servo, 4, 12);
+//            OLED_ShowString(5, 1, "SERVO:");
+//            if (Servo < 0) {
+//                OLED_ShowString(5, 6, "-");
+//                OLED_ShowNumber(5, 8, -Servo, 4);
+//            } else {
+//                OLED_ShowString(5, 6, "+");
+//                OLED_ShowNumber(5, 8, Servo, 4);
+//            }
         } else if (Car_Mode == Diff_Car || Car_Mode == Tank_Car) {
             // The Diff_Car and Tank_Car displays the PWM values of the left and right motors
             //差速小车、履带车显示左右电机的PWM的数值
             OLED_ShowString(00, 40, "MA");
             if (MOTOR_A.Motor_Pwm < 0)
                 OLED_ShowString(20, 40, "-"),
-                        OLED_ShowNumber(30, 40, -MOTOR_A.Motor_Pwm, 4, 12);
+                        OLED_ShowNumber(30, 40, -MOTOR_A.Motor_Pwm, 4);
             else
                 OLED_ShowString(20, 40, "+"),
-                        OLED_ShowNumber(30, 40, MOTOR_A.Motor_Pwm, 4, 12);
+                        OLED_ShowNumber(30, 40, MOTOR_A.Motor_Pwm, 4);
             OLED_ShowString(60, 40, "MB");
             if (MOTOR_B.Motor_Pwm < 0)
                 OLED_ShowString(80, 40, "-"),
-                        OLED_ShowNumber(90, 40, -MOTOR_B.Motor_Pwm, 4, 12);
+                        OLED_ShowNumber(90, 40, -MOTOR_B.Motor_Pwm, 4);
             else
                 OLED_ShowString(80, 40, "+"),
-                        OLED_ShowNumber(90, 40, MOTOR_B.Motor_Pwm, 4, 12);
+                        OLED_ShowNumber(90, 40, MOTOR_B.Motor_Pwm, 4);
         }
         //Line 5 of the display displays the content//
         //显示屏第5行显示内容//
 
         //Displays the current control mode //显示当前控制模式
-        if (PS2_ON_Flag == 1) OLED_ShowString(0, 50, "PS2  ");
-        else if (APP_ON_Flag == 1) OLED_ShowString(0, 50, "APP  ");
-        else if (Remote_ON_Flag == 1)OLED_ShowString(0, 50, "R-C  ");
-        else if (CAN_ON_Flag == 1) OLED_ShowString(0, 50, "CAN  ");
-        else if ((Usart1_ON_Flag || Usart5_ON_Flag) == 1) OLED_ShowString(0, 50, "USART");
-        else OLED_ShowString(0, 50, "ROS  ");
-
-        //Displays whether controls are allowed in the current car
-        //显示当前小车是否允许控制
-        if (EN == 1 && Flag_Stop == 0) OLED_ShowString(45, 50, "O N");
-        else OLED_ShowString(45, 50, "OFF");
-
-        OLED_ShowNumber(75, 50, Voltage_Show / 100, 2, 12);
-        OLED_ShowString(88, 50, ".");
-        OLED_ShowNumber(98, 50, Voltage_Show % 100, 2, 12);
-        OLED_ShowString(110, 50, "V");
-        if (Voltage_Show % 100 < 10) OLED_ShowNumber(92, 50, 0, 2, 12);
+//        if (PS2_ON_Flag == 1) OLED_ShowString(0, 50, "PS2  ");
+//        else if (APP_ON_Flag == 1) OLED_ShowString(0, 50, "APP  ");
+//        else if (Remote_ON_Flag == 1)OLED_ShowString(0, 50, "R-C  ");
+//        else if (CAN_ON_Flag == 1) OLED_ShowString(0, 50, "CAN  ");
+//        else if ((Usart1_ON_Flag || Usart5_ON_Flag) == 1) OLED_ShowString(0, 50, "USART");
+//        else OLED_ShowString(0, 50, "ROS  ");
+//
+//        //Displays whether controls are allowed in the current car
+//        //显示当前小车是否允许控制
+//        if (EN == 1 && Flag_Stop == 0) OLED_ShowString(45, 50, "O N");
+//        else OLED_ShowString(45, 50, "OFF");
+//
+        OLED_ShowNumber(1, 1, Voltage_Show / 100, 2);
+        OLED_ShowString(1, 3, ".");
+        OLED_ShowNumber(1, 4, Voltage_Show % 100, 2);
+        OLED_ShowString(1, 6, "V");
+        if (Voltage_Show % 100 < 10) OLED_ShowNumber(92, 50, 0, 2);
     }
 
-    OLED_Refresh_Gram();
+    //   OLED_Clear();
 }
 
 /**************************************************************************

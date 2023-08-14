@@ -2,14 +2,6 @@
 #include "system.h"
 
 /**************************************************************************
-Function: CAN1 initialization
-Input   : tsjw：Resynchronize the jump time unit, Scope: 1 ~ 3;
- 			    tbs2：Time unit of time period 2, range :1~8;
- 			    tbs1：Time unit of time period 1, range :1~16;
- 			    brp ：Baud rate divider, range :1 to 1024;(We're actually going to add 1, which is 1 to 1024) tq=(brp)*tpclk1
- 			    mode：0, normal mode;1. Loop mode;
-Output  : 0- Initialization successful;Other - initialization failed
-Note: none of the entry parameters (except mode) can be 0
 函数功能：CAN1初始化
 入口参数：tsjw：重新同步跳跃时间单元，范围:1~3;
  			    tbs2：时间段2的时间单元，范围:1~8;

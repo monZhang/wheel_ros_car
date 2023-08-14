@@ -55,9 +55,6 @@ void Delay_ms(void) {
 }
 
 /**************************************************************************
-Function: Buttons to scan
-Input   : Double click wait time
-Output  : Button status: 0- no action, 1- click, 2- double click
 函数功能：按键扫描
 入口参数：双击等待时间
 返回  值：按键状态: 0-无动作, 1-单击, 2-双击 
@@ -99,9 +96,6 @@ u8 click_N_Double(u8 time) {
 }
 
 /**************************************************************************
-Function: Button scan.Because static variables are used, a function with a different name needs to be defined when the keystroke scan function is used multiple times
-Input   : none
-Output  : Button status: 0- no action, 1- click, 2- double click
 函数功能：按键扫描。因为使用到了静态变量，当多处需要使用按键扫描函数时，需要再定义一个不同名函数
 入口参数：无
 返 回 值：按键状态: 0-无动作, 1-单击, 2-双击 
@@ -142,9 +136,6 @@ u8 click_N_Double_MPU6050(u8 time) {
 }
 
 /**************************************************************************
-Function: Long according to the test
-Input   : none
-Output  : Key state 0: no action 1: long press 3s
 函数功能：长按检测
 入口参数：无
 返回  值：按键状态 0：无动作 1：长按3s

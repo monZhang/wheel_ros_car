@@ -11,12 +11,12 @@ Output  : none
 **************************************************************************/
 void Enable_Pin(void) {
     GPIO_InitTypeDef GPIO_InitStructure;
-    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);//使能GPIOB时钟
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3; //KEY对应引脚
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);//使能GPIOB时钟
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1; //KEY对应引脚
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;//普通输入模式
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//100M
     GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;//上拉
-    GPIO_Init(GPIOD, &GPIO_InitStructure);//初始化GPIOB14
+    GPIO_Init(GPIOB, &GPIO_InitStructure);//初始化GPIOB1
 }
 
 void TIM1_PWM_Init(u16 arr, u16 psc) {
@@ -34,10 +34,10 @@ void TIM1_PWM_Init(u16 arr, u16 psc) {
 
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9 | GPIO_Pin_11 | GPIO_Pin_13 | GPIO_Pin_14;   //GPIO
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;        //复用功能
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;    //速度100MHz
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;  //速度100MHz
     GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;      //推挽复用输出
     GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;        //上拉
-    GPIO_Init(GPIOE, &GPIO_InitStructure);              //初始化PC口
+    GPIO_Init(GPIOE, &GPIO_InitStructure);       //初始化PC口
 
     //Sets the value of the auto-reload register cycle for the next update event load activity
     //设置在下一个更新事件装入活动的自动重装载寄存器周期的值

@@ -24,7 +24,7 @@ void data_task(void *pvParameters) {
         data_transition();
         USART1_SEND();     //Serial port 1 sends data //串口1发送数据
         USART3_SEND();     //Serial port 3 (ROS) sends data  //串口3(ROS)发送数据
-        USART5_SEND();         //Serial port 5 sends data //串口5发送数据
+        USART6_SEND();         //Serial port 5 sends data //串口5发送数据
         CAN_SEND();        //CAN send data //CAN发送数据
     }
 }
@@ -192,10 +192,10 @@ Output  : none
 入口参数：无
 返回  值：无
 **************************************************************************/
-void USART5_SEND(void) {
+void USART6_SEND(void) {
     unsigned char i = 0;
     for (i = 0; i < 24; i++) {
-        usart5_send(Send_Data.buffer[i]);
+        usart6_send(Send_Data.buffer[i]);
     }
 }
 
@@ -380,43 +380,40 @@ void uart3_init(u32 bound) {
 }
 
 /**************************************************************************
-Function: Serial port 5 initialization
+Function: Serial port 6 initialization
 Input   : none
 Output  : none
-函数功能：串口5初始化
+函数功能：串口6初始化
 入口参数：无
 返回  值：无
 **************************************************************************/
-void uart5_init(u32 bound) {
+void uart6_init(u32 bound) {
     GPIO_InitTypeDef GPIO_InitStructure;
     USART_InitTypeDef USART_InitStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
 
-    //PC12 TX
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);     //Enable the gpio clock  //使能GPIO时钟
-    //PD2 RX
-    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);     //Enable the gpio clock  //使能GPIO时钟
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_UART5, ENABLE); //Enable the Usart clock //使能USART时钟
+    RCC_APB1PeriphClockCmd(RCC_APB2Periph_USART6, ENABLE); //Enable the Usart clock //使能USART时钟
 
-    GPIO_PinAFConfig(GPIOC, GPIO_PinSource12, GPIO_AF_UART5);
-    GPIO_PinAFConfig(GPIOD, GPIO_PinSource2, GPIO_AF_UART5);
+    GPIO_PinAFConfig(GPIOC, GPIO_PinSource6, GPIO_AF_USART6);
+    GPIO_PinAFConfig(GPIOC, GPIO_PinSource7, GPIO_AF_USART6);
 
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;            //输出模式
     GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;          //推挽输出
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;       //高速50MHZ
     GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;            //上拉
     GPIO_Init(GPIOC, &GPIO_InitStructure);                  //初始化
 
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;            //输出模式
     GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;          //推挽输出
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;       //高速50MHZ
     GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;            //上拉
-    GPIO_Init(GPIOD, &GPIO_InitStructure);                  //初始化
+    GPIO_Init(GPIOC, &GPIO_InitStructure);                  //初始化
 
     //UsartNVIC configuration //UsartNVIC配置
-    NVIC_InitStructure.NVIC_IRQChannel = UART5_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannel = USART6_IRQn;
     //Preempt priority //抢占优先级
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;
     //Preempt priority //抢占优先级
@@ -434,9 +431,9 @@ void uart5_init(u32 bound) {
     USART_InitStructure.USART_Parity = USART_Parity_No; //Prosaic parity bits //无奇偶校验位
     USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None; //No hardware data flow control //无硬件数据流控制
     USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;    //Sending and receiving mode //收发模式
-    USART_Init(UART5, &USART_InitStructure);      //Initialize serial port 5 //初始化串口5
-    USART_ITConfig(UART5, USART_IT_RXNE, ENABLE); //Open the serial port to accept interrupts //开启串口接受中断
-    USART_Cmd(UART5, ENABLE);                     //Enable serial port 5 //使能串口5
+    USART_Init(USART6, &USART_InitStructure);      //Initialize serial port 5 //初始化串口5
+    USART_ITConfig(USART6, USART_IT_RXNE, ENABLE); //Open the serial port to accept interrupts //开启串口接受中断
+    USART_Cmd(USART6, ENABLE);                     //Enable serial port 5 //使能串口5
 }
 
 /**************************************************************************
@@ -707,13 +704,13 @@ Output  : none
 入口参数：无
 返回  值：无
 **************************************************************************/
-int UART5_IRQHandler(void) {
+int USART6_IRQHandler(void) {
     static u8 Count = 0;
     u8 Usart_Receive;
 
-    if (USART_GetITStatus(UART5, USART_IT_RXNE) != RESET) //Check if data is received //判断是否接收到数据
+    if (USART_GetITStatus(USART6, USART_IT_RXNE) != RESET) //Check if data is received //判断是否接收到数据
     {
-        Usart_Receive = USART_ReceiveData(UART5);//Read the data //读取数据
+        Usart_Receive = USART_ReceiveData(USART6);//Read the data //读取数据
         if (Time_count < CONTROL_DELAY)
             // Data is not processed until 10 seconds after startup
             //开机10秒前不处理数据
@@ -874,9 +871,9 @@ Output  : none
 入口参数：要发送的数据
 返回  值：无
 **************************************************************************/
-void usart5_send(u8 data) {
-    UART5->DR = data;
-    while ((UART5->SR & 0x40) == 0);
+void usart6_send(u8 data) {
+    USART6->DR = data;
+    while ((USART6->SR & 0x40) == 0);
 }
 
 /**************************************************************************

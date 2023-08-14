@@ -57,7 +57,7 @@ void USART1_SEND(void);
 
 void USART3_SEND(void);
 
-void USART5_SEND(void);
+void USART6_SEND(void);
 
 void CAN_SEND(void);
 
@@ -67,7 +67,7 @@ void uart2_init(u32 bound);
 
 void uart3_init(u32 bound);
 
-void uart5_init(u32 bound);
+void uart6_init(u32 bound);
 
 int USART1_IRQHandler(void);
 
@@ -87,7 +87,7 @@ void usart2_send(u8 data);
 
 void usart3_send(u8 data);
 
-void usart5_send(u8 data);
+void usart6_send(u8 data);
 
 u8 Check_Sum(unsigned char Count_Number, unsigned char Mode);
 

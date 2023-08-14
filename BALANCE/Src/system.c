@@ -1,22 +1,3 @@
-/***********************************************
-公司：轮趣科技（东莞）有限公司
-品牌：WHEELTEC
-官网：wheeltec.net
-淘宝店铺：shop114407458.taobao.com 
-速卖通: https://minibalance.aliexpress.com/store/4455017
-版本：V5.0
-修改时间：2022-05-05
-
-Brand: WHEELTEC
-Website: wheeltec.net
-Taobao shop: shop114407458.taobao.com 
-Aliexpress: https://minibalance.aliexpress.com/store/4455017
-Version: V5.0
-Update：2022-05-05
-
-All rights reserved
-***********************************************/
-
 #include "system.h"
 
 //Robot software fails to flag bits
@@ -76,8 +57,6 @@ float Omni_turn_radiaus;
 /************ 小车型号相关变量 **************************/
 /************ Variables related to car model ************/
 
-//PS2 controller, Bluetooth APP, aircraft model controller, CAN communication, serial port 1, serial port 5 communication control flag bit.
-//These 6 flag bits are all 0 by default, representing the serial port 3 control mode
 //PS2手柄、蓝牙APP、航模手柄、CAN通信、串口1、串口5通信控制标志位。这6个标志位默认都为0，代表串口3控制模式
 u8 PS2_ON_Flag = 0, APP_ON_Flag = 0, Remote_ON_Flag = 0, CAN_ON_Flag = 0, Usart1_ON_Flag, Usart5_ON_Flag;
 
@@ -103,79 +82,55 @@ long int ErrorCode = 0;
 
 void systemInit(void) {
 
-//	//Interrupt priority group setti  ng
-//	//中断优先级分组设置
+	//中断优先级分组设置
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
-//	
-//	//Delay function initialization
-//	//延时函数初始化
+
+	//延时函数初始化
     delay_init(168);
 
-    //Initialize the hardware interface connected to the LED lamp
     //初始化与LED灯连接的硬件接口
     LED_Init();
 
-    //Initialize the hardware interface connected to the buzzer
     //初始化与蜂鸣器连接的硬件接口
     Buzzer_Init();
 
-    //Initialize the hardware interface connected to the enable switch
     //初始化与使能开关连接的硬件接口
     Enable_Pin();
 
-    //Initialize the hardware interface connected to the OLED display
     //初始化与OLED显示屏连接的硬件接口
     OLED_Init();
 
-    //Initialize the hardware interface connected to the user's key
     //初始化与用户按键连接的硬件接口
     KEY_Init();
 
-    //Serial port 1 initialization, communication baud rate 115200,
-    //can be used to communicate with ROS terminal
     //串口1初始化，通信波特率115200，可用于与ROS端通信
     uart1_init(115200);
 
-    //Serial port 2 initialization, communication baud rate 9600,
-    //used to communicate with Bluetooth APP terminal
     //串口2初始化，通信波特率9600，用于与蓝牙APP端通信
     uart2_init(9600);
 
-    //Serial port 3 is initialized and the baud rate is 115200.
-    //Serial port 3 is the default port used to communicate with ROS terminal
-    //串口3初始化，通信波特率115200，串口3为默认用于与ROS端通信的串口
+    //串口3初始化，通信波特率115200
     uart3_init(115200);
 
-    //Serial port 5 initialization, communication baud rate 115200,
-    //can be used to communicate with ROS terminal
-    //串口5初始化，通信波特率115200，可用于与ROS端通信
-    uart5_init(115200);
+    //串口6初始化，通信波特率115200，可用于与ROS端通信
+    uart6_init(115200);
 
-    //ADC pin initialization, used to read the battery voltage and potentiometer gear,
-    //potentiometer gear determines the car after the boot of the car model
     //ADC引脚初始化，用于读取电池电压与电位器档位，电位器档位决定小车开机后的小车适配型号
     Adc_Init();
     Adc_POWER_Init();
 
-    //Initialize the CAN communication interface
     //CAN通信接口初始化
     CAN1_Mode_Init(1, 7, 6, 3, 0);
 
-    //According to the tap position of the potentiometer, determine which type of car needs to be matched,
-    //and then initialize the corresponding parameters
     //根据电位器的档位判断需要适配的是哪一种型号的小车，然后进行对应的参数初始化
     Robot_Select();
 
-    //Encoder A is initialized to read the real time speed of motor C
     //编码器A初始化，用于读取电机C的实时速度
     Encoder_Init_TIM2();
-    //Encoder B is initialized to read the real time speed of motor D
     //编码器B初始化，用于读取电机D的实时速度
     Encoder_Init_TIM3();
-    //Encoder C is initialized to read the real time speed of motor B
     //编码器C初始化，用于读取电机B的实时速度
     Encoder_Init_TIM4();
-    //Encoder D is initialized to read the real time speed of motor A
     //编码器D初始化，用于读取电机A的实时速度
     Encoder_Init_TIM5();
 
