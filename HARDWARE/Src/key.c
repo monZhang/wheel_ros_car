@@ -1,9 +1,6 @@
 #include "key.h"
 
 /**************************************************************************
-Function: Key initialization
-Input   : none
-Output  : none
 函数功能：按键初始化
 入口参数：无
 返回  值：无 
@@ -19,9 +16,6 @@ void KEY_Init(void) {
 }
 
 /**************************************************************************
-Function: Buttons to scan
-Input   : none
-Output  : none
 函数功能：按键扫描
 入口参数：无
 返回  值：按键状态 0：无动作 1：单击 
@@ -40,9 +34,6 @@ u8 click(void) {
 }
 
 /**************************************************************************
-Function: Delay function
-Input   : none
-Output  : none
 函数功能：延迟函数
 入口参数：无
 返 回 值：无

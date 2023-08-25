@@ -46,7 +46,7 @@
 #define PWMD2      TIM1->CCR3     //PWMD
 
 /*------------------------------------*/
-#define EN     PDin(3)
+#define EN     PBin(1)
 
 #define Servo_PWM  TIM12->CCR2
 #define SERVO_INIT 1500  //Servo zero point //╤Ф╩ЗаЦ╣Ц

@@ -49,11 +49,10 @@ float q0 = 1.0f, q1 = 0.0f, q2 = 0.0f, q3 = 0.0f;
 void MPU6050_task(void *pvParameters) {
     u32 lastWakeTime = getSysTickCnt();
     while (1) {
-        //This task runs at 100Hz
+
         //此任务以100Hz的频率运行
         vTaskDelayUntil(&lastWakeTime, F2T(RATE_100_HZ));
 
-        //Read the gyroscope zero before starting
         //开机前，读取陀螺仪零点
         if (Deviation_Count < CONTROL_DELAY) {
             Deviation_Count++;
@@ -113,9 +112,6 @@ int16_t Gx_offset = 0, Gy_offset = 0, Gz_offset = 0;
 
 
 /**************************************************************************
-Function: The new ADC data is updated to FIFO array for filtering
-Input   : ax，ay，az：x，y, z-axis acceleration data；gx，gy，gz：x. Y, z-axis angular acceleration data
-Output  : none
 函数功能：将新的ADC数据更新到 FIFO数组，进行滤波处理
 入口参数：ax，ay，az：x，y，z轴加速度数据；gx，gy，gz：x，y，z轴角加速度数据
 返回  值：无
@@ -176,9 +172,6 @@ void MPU6050_newValues(int16_t ax, int16_t ay, int16_t az, int16_t gx, int16_t g
 }
 
 /**************************************************************************
-Function: Setting the clock source of mpu6050
-Input   : source：Clock source number
-Output  : none
 函数功能：设置  MPU6050 的时钟源
 入口参数：source：时钟源编号
 返回  值：无
@@ -211,9 +204,6 @@ void MPU6050_setFullScaleGyroRange(uint8_t range) {
 }
 
 /**************************************************************************
-Function: Setting the maximum range of mpu6050 accelerometer
-Input   : range：Acceleration maximum range number
-Output  : none
 函数功能：设置 MPU6050 加速度计的最大量程
 入口参数：range：加速度最大量程编号
 返回  值：无
@@ -227,9 +217,6 @@ void MPU6050_setFullScaleAccelRange(uint8_t range) {
 }
 
 /**************************************************************************
-Function: Set mpu6050 to sleep mode or not
-Input   : enable：1，sleep；0，work；
-Output  : none
 函数功能：设置 MPU6050 是否进入睡眠模式
 入口参数：enable：1，睡觉；0，工作；
 返回  值：无
@@ -239,9 +226,6 @@ void MPU6050_setSleepEnabled(uint8_t enabled) {
 }
 
 /**************************************************************************
-Function: Read identity
-Input   : none
-Output  : 0x68
 函数功能：读取  MPU6050 WHO_AM_I 标识
 入口参数：无
 返回  值：0x68
@@ -256,9 +240,6 @@ uint8_t MPU6050_getDeviceID(void) {
 }
 
 /**************************************************************************
-Function: Check whether mpu6050 is connected
-Input   : none
-Output  : 1：Connected；0：Not connected
 函数功能：检测MPU6050 是否已经连接
 入口参数：无
 返回  值：1：已连接；0：未连接
@@ -270,9 +251,6 @@ uint8_t MPU6050_testConnection(void) {
 }
 
 /**************************************************************************
-Function: Setting whether mpu6050 is the host of aux I2C cable
-Input   : enable：1，yes；0;not
-Output  : none
 函数功能：设置 MPU6050 是否为AUX I2C线的主机
 入口参数：enable：1，是；0：否
 返回  值：无
@@ -281,10 +259,8 @@ void MPU6050_setI2CMasterModeEnabled(uint8_t enabled) {
     I2C_WriteOneBit(devAddr, MPU6050_RA_USER_CTRL, MPU6050_USERCTRL_I2C_MST_EN_BIT, enabled);
 }
 
+
 /**************************************************************************
-Function: Setting whether mpu6050 is the host of aux I2C cable
-Input   : enable：1，yes；0;not
-Output  : none
 函数功能：设置 MPU6050 是否为AUX I2C线的主机
 入口参数：enable：1，是；0：否
 返回  值：无
@@ -294,19 +270,16 @@ void MPU6050_setI2CBypassEnabled(uint8_t enabled) {
 }
 
 /**************************************************************************
-Function: initialization Mpu6050 to enter the available state
-Input   : none
-Output  : none
 函数功能：初始化	MPU6050 以进入可用状态
 入口参数：无
 返回  值：无
 **************************************************************************/
 u8 MPU6050_initialize(void) {
     u8 res;
-    //IIC_Init();  //Initialize the IIC bus //初始化IIC总线
-    I2C_WriteOneByte(devAddr, MPU6050_RA_PWR_MGMT_1, 0X80);    //Reset MPUrobot_select_init.h //复位MPUrobot_select_init.h
+    //初始化IIC总线
+    I2C_WriteOneByte(devAddr, MPU6050_RA_PWR_MGMT_1, 0X80);    //复位MPUrobot_select_init.h
     delay_ms(200); //Delay 200 ms //延时200ms
-    I2C_WriteOneByte(devAddr, MPU6050_RA_PWR_MGMT_1, 0X00);    //Wake mpurobot_select_init.h //唤醒MPUrobot_select_init.h
+    I2C_WriteOneByte(devAddr, MPU6050_RA_PWR_MGMT_1, 0X00);    //唤醒MPUrobot_select_init.h
 
     //MPU6050_Set_Gyro_Fsr(1);  //Gyroscope sensor              //陀螺仪传感器,±500dps=±500°/s ±32768 (gyro/32768*500)*PI/180(rad/s)=gyro/3754.9(rad/s)
     MPU6050_setFullScaleGyroRange(MPU6050_GYRO_FS_500);
@@ -314,31 +287,24 @@ u8 MPU6050_initialize(void) {
     MPU6050_setFullScaleAccelRange(MPU6050_ACCEL_FS_2);
     MPU6050_Set_Rate(50);            //Set the sampling rate to 50Hz //设置采样率50Hz
 
-    I2C_WriteOneByte(devAddr, MPU6050_RA_INT_ENABLE, 0X00);      //Turn off all interrupts //关闭所有中断
-    I2C_WriteOneByte(devAddr, MPU6050_RA_USER_CTRL, 0X00);    //The I2C main mode is off //I2C主模式关闭
-    I2C_WriteOneByte(devAddr, MPU6050_RA_FIFO_EN, 0X00);      //Close the FIFO //关闭FIFO
-    //The INT pin is low, enabling bypass mode to read the magnetometer directly
+    I2C_WriteOneByte(devAddr, MPU6050_RA_INT_ENABLE, 0X00);         //关闭所有中断
+    I2C_WriteOneByte(devAddr, MPU6050_RA_USER_CTRL, 0X00);          //I2C主模式关闭
+    I2C_WriteOneByte(devAddr, MPU6050_RA_FIFO_EN, 0X00);            //关闭FIFO
     //INT引脚低电平有效，开启bypass模式，可以直接读取磁力计
     I2C_WriteOneByte(devAddr, MPU6050_RA_INT_PIN_CFG, 0X80);
-    //Read the ID of MPU6050
     //读取MPU6050的ID
     res = I2C_ReadOneByte(devAddr, MPU6050_RA_WHO_AM_I);
-    if (res ==
-        MPU6050_DEFAULT_ADDRESS) //The device ID is correct, The correct device ID depends on the AD pin //器件ID正确, 器件ID的正确取决于AD引脚
-    {
-        I2C_WriteOneByte(devAddr, MPU6050_RA_PWR_MGMT_1,
-                         0X01);    //Set CLKSEL,PLL X axis as reference //设置CLKSEL,PLL X轴为参考
-        I2C_WriteOneByte(devAddr, MPU6050_RA_PWR_MGMT_2, 0X00);    //Acceleration and gyroscope both work //加速度与陀螺仪都工作
-        MPU6050_Set_Rate(50);                          //Set the sampling rate to 50Hz //设置采样率为50Hz
+    //器件ID正确, 器件ID的正确取决于AD引脚
+    if (res == MPU6050_DEFAULT_ADDRESS) {
+        I2C_WriteOneByte(devAddr, MPU6050_RA_PWR_MGMT_1, 0X01);      //设置CLKSEL,PLL X轴为参考
+        I2C_WriteOneByte(devAddr, MPU6050_RA_PWR_MGMT_2, 0X00);     //加速度与陀螺仪都工作
+        MPU6050_Set_Rate(50);                                       //设置采样率为50Hz
     } else return 1;
     return 0;
 
 }
 
 /**************************************************************************
-Function: Initialization of DMP in mpu6050
-Input   : none
-Output  : none
 函数功能：MPU6050内置DMP的初始化
 入口参数：无
 返回  值：无
@@ -374,9 +340,6 @@ Output  : none
 
 //}
 /**************************************************************************
-Function: Read the attitude information of DMP in mpu6050
-Input   : none
-Output  : none
 函数功能：读取MPU6050内置DMP的姿态信息
 入口参数：无
 返回  值：无
@@ -400,10 +363,8 @@ Output  : none
 //				}
 
 //}
+
 /**************************************************************************
-Function: Read mpu6050 built-in temperature sensor data
-Input   : none
-Output  : Centigrade temperature
 函数功能：读取MPU6050内置温度传感器数据
 入口参数：无
 返回  值：摄氏温度
@@ -411,15 +372,12 @@ Output  : Centigrade temperature
 int Read_Temperature(void) {
     float Temp;
     Temp = (I2C_ReadOneByte(devAddr, MPU6050_RA_TEMP_OUT_H) << 8) + I2C_ReadOneByte(devAddr, MPU6050_RA_TEMP_OUT_L);
-    if (Temp > 32768) Temp -= 65536;    //数据类型转换
+    if (Temp > 32768) Temp -= 65536;        //数据类型转换
     Temp = (36.53f + Temp / 340) * 10;      //温度放大十倍存放
     return (int) Temp;
 }
 
 /**************************************************************************
-Function: Initialize TIM2 as the encoder interface mode
-Input   : LPF: Digital low-pass filtering frequency (Hz)
-Output  : 0: Settings successful, others: Settings failed
 函数功能：设置MPUrobot_select_init.h的数字低通滤波器
 入口参数：lpf:数字低通滤波频率(Hz)
 返回  值：0:设置成功, 其他:设置失败
@@ -436,9 +394,6 @@ unsigned char MPU6050_Set_LPF(u16 lpf) {
 }
 
 /**************************************************************************
-Function: Initialize TIM2 as the encoder interface mode
-Input   : rate:4~1000(Hz)
-Output  : 0: Settings successful, others: Settings failed
 函数功能：设置MPUrobot_select_init.h的采样率(假定Fs=1KHz)
 入口参数：rate:4~1000(Hz)
 返回  值：0:设置成功, 其他:设置失败
@@ -453,37 +408,32 @@ unsigned char MPU6050_Set_Rate(u16 rate) {
 }
 
 /**************************************************************************
-Function: Initialize TIM2 as the encoder interface mode
-Input   : Gx, Gy, Gz: raw readings (plus or minus) of the x,y, and z axes of the gyroscope
-Output  : 0: success, others: error code
 函数功能：获得陀螺仪值(原始值)
 **************************************************************************/
 void MPU_Get_Gyroscope(void) {
-    gyro[0] = (I2C_ReadOneByte(devAddr, MPU6050_RA_GYRO_XOUT_H) << 8) +
-              I2C_ReadOneByte(devAddr, MPU6050_RA_GYRO_XOUT_L);    //读取X轴陀螺仪
-    gyro[1] = (I2C_ReadOneByte(devAddr, MPU6050_RA_GYRO_YOUT_H) << 8) +
-              I2C_ReadOneByte(devAddr, MPU6050_RA_GYRO_YOUT_L);    //读取Y轴陀螺仪
-    gyro[2] = (I2C_ReadOneByte(devAddr, MPU6050_RA_GYRO_ZOUT_H) << 8) +
-              I2C_ReadOneByte(devAddr, MPU6050_RA_GYRO_ZOUT_L);    //读取Z轴陀螺仪
+    //读取X轴陀螺仪
+    gyro[0] = (I2C_ReadOneByte(devAddr, MPU6050_RA_GYRO_XOUT_H) << 8) + I2C_ReadOneByte(devAddr, MPU6050_RA_GYRO_XOUT_L);
+    //读取Y轴陀螺仪
+    gyro[1] = (I2C_ReadOneByte(devAddr, MPU6050_RA_GYRO_YOUT_H) << 8) + I2C_ReadOneByte(devAddr, MPU6050_RA_GYRO_YOUT_L);
+    //读取Z轴陀螺仪
+    gyro[2] = (I2C_ReadOneByte(devAddr, MPU6050_RA_GYRO_ZOUT_H) << 8) + I2C_ReadOneByte(devAddr, MPU6050_RA_GYRO_ZOUT_L);
 
-    if (Deviation_Count < CONTROL_DELAY) // 10 seconds before starting //开机前10秒
-    {
+    //开机前10秒
+    if (Deviation_Count < CONTROL_DELAY) {
+        Led_Count = 1;  //LED高频闪烁
+        Flag_Stop = 1;  //软件失能标志位置1
+    } else {
+        //开机10秒后, 软件失能标志位置0
+        if (Deviation_Count == CONTROL_DELAY) {
+            Flag_Stop = 0;
+        }
+        Led_Count = 300; //LED恢复正常闪烁频率
 
-        Led_Count = 1; //LED high frequency flashing //LED高频闪烁
-        Flag_Stop = 1; //The software fails to flag location 1 //软件失能标志位置1
-    } else //10 seconds after starting //开机10秒后
-    {
-        if (Deviation_Count == CONTROL_DELAY)
-            Flag_Stop = 0; //The software fails to flag location 0 //软件失能标志位置0
-        Led_Count = 300; //The LED returns to normal flicker frequency //LED恢复正常闪烁频率
-
-        //Save the raw data to update zero by clicking the user button
         //保存原始数据用于单击用户按键更新零点
         Original_gyro[0] = gyro[0];
         Original_gyro[1] = gyro[1];
         Original_gyro[2] = gyro[2];
 
-        //Removes zero drift data
         //去除零点漂移的数据
         gyro[0] = Original_gyro[0] - Deviation_gyro[0];
         gyro[1] = Original_gyro[1] - Deviation_gyro[1];
@@ -493,31 +443,29 @@ void MPU_Get_Gyroscope(void) {
 }
 
 /**************************************************************************
-Function: Initialize TIM2 as the encoder interface mode
-Input   : Gx, Gy, Gz: raw readings (plus or minus) of the x,y, and z axes of the gyroscope
-Output  : 0: success, others: error code
 函数功能：获得加速度计值(原始值)
 **************************************************************************/
 void MPU_Get_Accelscope(void) {
+    //读取X轴加速度计
     accel[0] = (I2C_ReadOneByte(devAddr, MPU6050_RA_ACCEL_XOUT_H) << 8) +
-               I2C_ReadOneByte(devAddr, MPU6050_RA_ACCEL_XOUT_L); //读取X轴加速度计
+               I2C_ReadOneByte(devAddr, MPU6050_RA_ACCEL_XOUT_L);
+    //读取X轴加速度计
     accel[1] = (I2C_ReadOneByte(devAddr, MPU6050_RA_ACCEL_YOUT_H) << 8) +
-               I2C_ReadOneByte(devAddr, MPU6050_RA_ACCEL_YOUT_L); //读取X轴加速度计
+               I2C_ReadOneByte(devAddr, MPU6050_RA_ACCEL_YOUT_L);
+    //读取Z轴加速度计
     accel[2] = (I2C_ReadOneByte(devAddr, MPU6050_RA_ACCEL_ZOUT_H) << 8) +
-               I2C_ReadOneByte(devAddr, MPU6050_RA_ACCEL_ZOUT_L); //读取Z轴加速度计
+               I2C_ReadOneByte(devAddr, MPU6050_RA_ACCEL_ZOUT_L);
 
-    if (Deviation_Count < CONTROL_DELAY) // 10 seconds before starting //开机前10秒
-    {
+    if (Deviation_Count < CONTROL_DELAY) {
+        //开机前10秒
+    } else {
+        //开机10秒后
 
-    } else //10 seconds after starting //开机10秒后
-    {
-        //Save the raw data to update zero by clicking the user button
         //保存原始数据用于单击用户按键更新零点
         Original_accel[0] = accel[0];
         Original_accel[1] = accel[1];
         Original_accel[2] = accel[2];
 
-        //Removes zero drift data
         //去除零点漂移的数据
         accel[0] = Original_accel[0] - Deviation_accel[0];
         accel[1] = Original_accel[1] - Deviation_accel[1];

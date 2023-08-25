@@ -5,10 +5,7 @@ RECEIVE_DATA Receive_Data;
 extern int Time_count;
 
 /**************************************************************************
-Function: Usartx3, Usartx1,Usartx5 and CAN send data task 
-Input   : none
-Output  : none
-函数功能：串口3、串口1、串口5、CAN发送数据任务
+函数功能：串口3、串口1、串口6、CAN发送数据任务
 入口参数：无
 返回  值：无
 **************************************************************************/
@@ -16,105 +13,52 @@ void data_task(void *pvParameters) {
     u32 lastWakeTime = getSysTickCnt();
 
     while (1) {
-        //The task is run at 20hz
         //此任务以20Hz的频率运行
         vTaskDelayUntil(&lastWakeTime, F2T(RATE_20_HZ));
-        //Assign the data to be sent
-        //对要进行发送的数据进行赋值
-        data_transition();
-        USART1_SEND();     //Serial port 1 sends data //串口1发送数据
-        USART3_SEND();     //Serial port 3 (ROS) sends data  //串口3(ROS)发送数据
-        USART6_SEND();         //Serial port 5 sends data //串口5发送数据
-        CAN_SEND();        //CAN send data //CAN发送数据
+        data_transition();      //对要进行发送的数据进行赋值
+        USART1_SEND();          //串口1发送数据
+        USART3_SEND();          //串口3(ROS)发送数据
+       // USART6_SEND();          //串口5发送数据
+        CAN_SEND();             //CAN发送数据
     }
 }
 
 /**************************************************************************
-Function: The data sent by the serial port is assigned
-Input   : none
-Output  : none
 函数功能：串口发送的数据进行赋值
 入口参数：无
 返回  值：无
 **************************************************************************/
 void data_transition(void) {
-    Send_Data.Sensor_Str.Frame_Header = FRAME_HEADER; //Frame_header //帧头
-    Send_Data.Sensor_Str.Frame_Tail = FRAME_TAIL;     //Frame_tail //帧尾
+    Send_Data.Sensor_Str.Frame_Header = FRAME_HEADER;  //帧头
+    Send_Data.Sensor_Str.Frame_Tail = FRAME_TAIL;      //帧尾
 
-    //According to different vehicle types, different kinematics algorithms were selected to carry out the forward kinematics solution,
-    //and the three-axis velocity was obtained from each wheel velocity
     //根据不同车型选择不同运动学算法进行运动学正解，从各车轮速度求出三轴速度
-    switch (Car_Mode) {
-        case Mec_Car:
-            Send_Data.Sensor_Str.X_speed =
-                    ((MOTOR_A.Encoder + MOTOR_B.Encoder + MOTOR_C.Encoder + MOTOR_D.Encoder) / 4) * 1000;
-            Send_Data.Sensor_Str.Y_speed =
-                    ((MOTOR_A.Encoder - MOTOR_B.Encoder + MOTOR_C.Encoder - MOTOR_D.Encoder) / 4) * 1000;
-            Send_Data.Sensor_Str.Z_speed =
-                    ((-MOTOR_A.Encoder - MOTOR_B.Encoder + MOTOR_C.Encoder + MOTOR_D.Encoder) / 4 /
-                     (Axle_spacing + Wheel_spacing)) * 1000;
-            break;
+    Send_Data.Sensor_Str.X_speed = ((MOTOR_A.Encoder + MOTOR_B.Encoder) / 2) * 1000;
+    Send_Data.Sensor_Str.Y_speed = 0;
+    Send_Data.Sensor_Str.Z_speed = ((MOTOR_B.Encoder - MOTOR_A.Encoder) / Wheel_spacing) * 1000;
 
-        case Omni_Car:
-            Send_Data.Sensor_Str.X_speed = ((MOTOR_C.Encoder - MOTOR_B.Encoder) / 2 / X_PARAMETER) * 1000;
-            Send_Data.Sensor_Str.Y_speed = ((MOTOR_A.Encoder * 2 - MOTOR_B.Encoder - MOTOR_C.Encoder) / 3) * 1000;
-            Send_Data.Sensor_Str.Z_speed =
-                    ((MOTOR_A.Encoder + MOTOR_B.Encoder + MOTOR_C.Encoder) / 3 / Omni_turn_radiaus) * 1000;
-            break;
+    //加速度计三轴加速度
+    Send_Data.Sensor_Str.Accelerometer.X_data = accel[1];   //加速度计Y轴转换到ROS坐标X轴
+    Send_Data.Sensor_Str.Accelerometer.Y_data = -accel[0];  //加速度计X轴转换到ROS坐标Y轴
+    Send_Data.Sensor_Str.Accelerometer.Z_data = accel[2];   //加速度计Z轴转换到ROS坐标Z轴
 
-        case Akm_Car:
-            Send_Data.Sensor_Str.X_speed = ((MOTOR_A.Encoder + MOTOR_B.Encoder) / 2) * 1000;
-            Send_Data.Sensor_Str.Y_speed = 0;
-            Send_Data.Sensor_Str.Z_speed = ((MOTOR_B.Encoder - MOTOR_A.Encoder) / Wheel_spacing) * 1000;
-            break;
+    //角速度计三轴角速度
+    Send_Data.Sensor_Str.Gyroscope.X_data = gyro[1];    //角速度计Y轴转换到ROS坐标X轴
+    Send_Data.Sensor_Str.Gyroscope.Y_data = -gyro[0];       //角速度计X轴转换到ROS坐标Y轴
 
-        case Diff_Car:
-            Send_Data.Sensor_Str.X_speed = ((MOTOR_A.Encoder + MOTOR_B.Encoder) / 2) * 1000;
-            Send_Data.Sensor_Str.Y_speed = 0;
-            Send_Data.Sensor_Str.Z_speed = ((MOTOR_B.Encoder - MOTOR_A.Encoder) / Wheel_spacing) * 1000;
-            break;
-
-        case FourWheel_Car:
-            Send_Data.Sensor_Str.X_speed =
-                    ((MOTOR_A.Encoder + MOTOR_B.Encoder + MOTOR_C.Encoder + MOTOR_D.Encoder) / 4) * 1000;
-            Send_Data.Sensor_Str.Y_speed = 0;
-            Send_Data.Sensor_Str.Z_speed =
-                    ((-MOTOR_B.Encoder - MOTOR_A.Encoder + MOTOR_C.Encoder + MOTOR_D.Encoder) / 2 /
-                     (Axle_spacing + Wheel_spacing)) * 1000;
-            break;
-
-        case Tank_Car:
-            Send_Data.Sensor_Str.X_speed = ((MOTOR_A.Encoder + MOTOR_B.Encoder) / 2) * 1000;
-            Send_Data.Sensor_Str.Y_speed = 0;
-            Send_Data.Sensor_Str.Z_speed = ((MOTOR_B.Encoder - MOTOR_A.Encoder) / (Wheel_spacing) * 1000);
-            break;
-    }
-
-    //The acceleration of the triaxial acceleration //加速度计三轴加速度
-    Send_Data.Sensor_Str.Accelerometer.X_data = accel[1]; //The accelerometer Y-axis is converted to the ros coordinate X axis //加速度计Y轴转换到ROS坐标X轴
-    Send_Data.Sensor_Str.Accelerometer.Y_data = -accel[0]; //The accelerometer X-axis is converted to the ros coordinate y axis //加速度计X轴转换到ROS坐标Y轴
-    Send_Data.Sensor_Str.Accelerometer.Z_data = accel[2]; //The accelerometer Z-axis is converted to the ros coordinate Z axis //加速度计Z轴转换到ROS坐标Z轴
-
-    //The Angle velocity of the triaxial velocity //角速度计三轴角速度
-    Send_Data.Sensor_Str.Gyroscope.X_data = gyro[1]; //The Y-axis is converted to the ros coordinate X axis //角速度计Y轴转换到ROS坐标X轴
-    Send_Data.Sensor_Str.Gyroscope.Y_data = -gyro[0]; //The X-axis is converted to the ros coordinate y axis //角速度计X轴转换到ROS坐标Y轴
     if (Flag_Stop == 0)
-        //If the motor control bit makes energy state, the z-axis velocity is sent normall
         //如果电机控制位使能状态，那么正常发送Z轴角速度
         Send_Data.Sensor_Str.Gyroscope.Z_data = gyro[2];
     else
-        //If the robot is static (motor control dislocation), the z-axis is 0
         //如果机器人是静止的（电机控制位失能），那么发送的Z轴角速度为0
         Send_Data.Sensor_Str.Gyroscope.Z_data = 0;
 
-    //Battery voltage (this is a thousand times larger floating point number, which will be reduced by a thousand times as well as receiving the data).
     //电池电压(这里将浮点数放大一千倍传输，相应的在接收端在接收到数据后也会缩小一千倍)
     Send_Data.Sensor_Str.Power_Voltage = Voltage * 1000;
 
-    Send_Data.buffer[0] = Send_Data.Sensor_Str.Frame_Header; //Frame_heade //帧头
-    Send_Data.buffer[1] = Flag_Stop; //Car software loss marker //小车软件失能标志位
+    Send_Data.buffer[0] = Send_Data.Sensor_Str.Frame_Header;    //帧头
+    Send_Data.buffer[1] = Flag_Stop;                            //小车软件失能标志位
 
-    //The three-axis speed of / / car is split into two eight digit Numbers
     //小车三轴速度,各轴都拆分为两个8位数据再发送
     Send_Data.buffer[2] = Send_Data.Sensor_Str.X_speed >> 8;
     Send_Data.buffer[3] = Send_Data.Sensor_Str.X_speed;
@@ -123,7 +67,6 @@ void data_transition(void) {
     Send_Data.buffer[6] = Send_Data.Sensor_Str.Z_speed >> 8;
     Send_Data.buffer[7] = Send_Data.Sensor_Str.Z_speed;
 
-    //The acceleration of the triaxial axis of / / imu accelerometer is divided into two eight digit reams
     //IMU加速度计三轴加速度,各轴都拆分为两个8位数据再发送
     Send_Data.buffer[8] = Send_Data.Sensor_Str.Accelerometer.X_data >> 8;
     Send_Data.buffer[9] = Send_Data.Sensor_Str.Accelerometer.X_data;
@@ -132,7 +75,6 @@ void data_transition(void) {
     Send_Data.buffer[12] = Send_Data.Sensor_Str.Accelerometer.Z_data >> 8;
     Send_Data.buffer[13] = Send_Data.Sensor_Str.Accelerometer.Z_data;
 
-    //The axis of the triaxial velocity of the / /imu is divided into two eight digits
     //IMU角速度计三轴角速度,各轴都拆分为两个8位数据再发送
     Send_Data.buffer[14] = Send_Data.Sensor_Str.Gyroscope.X_data >> 8;
     Send_Data.buffer[15] = Send_Data.Sensor_Str.Gyroscope.X_data;
@@ -141,16 +83,15 @@ void data_transition(void) {
     Send_Data.buffer[18] = Send_Data.Sensor_Str.Gyroscope.Z_data >> 8;
     Send_Data.buffer[19] = Send_Data.Sensor_Str.Gyroscope.Z_data;
 
-    //Battery voltage, split into two 8 digit Numbers
     //电池电压,拆分为两个8位数据发送
     Send_Data.buffer[20] = Send_Data.Sensor_Str.Power_Voltage >> 8;
     Send_Data.buffer[21] = Send_Data.Sensor_Str.Power_Voltage;
 
-    //Data check digit calculation, Pattern 1 is a data check
     //数据校验位计算，模式1是发送数据校验
     Send_Data.buffer[22] = Check_Sum(22, 1);
 
-    Send_Data.buffer[23] = Send_Data.Sensor_Str.Frame_Tail; //Frame_tail //帧尾
+    //帧尾
+    Send_Data.buffer[23] = Send_Data.Sensor_Str.Frame_Tail;
 }
 
 /**************************************************************************
@@ -227,9 +168,6 @@ void CAN_SEND(void) {
 }
 
 /**************************************************************************
-Function: Serial port 1 initialization
-Input   : none
-Output  : none
 函数功能：串口1初始化
 入口参数：无
 返 回 值：无
@@ -877,9 +815,6 @@ void usart6_send(u8 data) {
 }
 
 /**************************************************************************
-Function: Calculates the check bits of data to be sent/received
-Input   : Count_Number: The first few digits of a check; Mode: 0-Verify the received data, 1-Validate the sent data
-Output  : Check result
 函数功能：计算要发送/接收的数据校验结果
 入口参数：Count_Number：校验的前几位数；Mode：0-对接收数据进行校验，1-对发送数据进行校验
 返回  值：校验结果
@@ -887,14 +822,12 @@ Output  : Check result
 u8 Check_Sum(unsigned char Count_Number, unsigned char Mode) {
     unsigned char check_sum = 0, k;
 
-    //Validate the data to be sent
     //对要发送的数据进行校验
     if (Mode == 1)
         for (k = 0; k < Count_Number; k++) {
             check_sum = check_sum ^ Send_Data.buffer[k];
         }
 
-    //Verify the data received
     //对接收到的数据进行校验
     if (Mode == 0)
         for (k = 0; k < Count_Number; k++) {
